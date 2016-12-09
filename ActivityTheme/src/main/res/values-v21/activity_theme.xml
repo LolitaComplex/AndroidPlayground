@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Mertial" parent="android:Theme.Material" />
+    <style name="Mertial.Light" parent="android:Theme.Material.Light" />
+    <style name="Mertial.ActionBar" parent="android:Theme.Material.Light.DarkActionBar" />
+
+    <style name="Global.Blue" parent="Theme.AppCompat.Light">
+        <item name="android:colorPrimary">@color/blue</item>
+        <item name="bgcolor">@color/blue</item>
+    </style>
+
+    <style name="Global.Gray" parent="Theme.AppCompat.Light">
+        <item name="android:colorPrimary">@color/gray</item>
+        <item name="bgcolor">@color/gray</item>
+    </style>
+
+    <style name="Global.Purple" parent="Theme.AppCompat">
+        <item name="android:colorPrimary">@color/purple</item>
+        <item name="bgcolor">@color/purple</item>
+    </style>
+
+    <style name="Global.ColorPrimary" parent="Theme.AppCompat">
+        <item name="android:colorPrimary">@color/colorAccent</item>
+        <item name="bgcolor">@color/colorAccent</item>
+    </style>
+
+    <!--<attr name="bgcolor" format="color|reference"/>-->
+
+    <!-- 这些数据是从Material Animation中直接复制过来的，有空研究一下各个值的作用 -->
+    <style name="MaterialAnimations.Yellow" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_yellow_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_yellow_primary</item>
+        <item name="android:textColorPrimary">@color/theme_yellow_text</item>
+        <item name="android:statusBarColor">@color/theme_yellow_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_yellow_background</item>
+        <item name="android:colorAccent">@color/theme_yellow_accent</item>
+    </style>
+
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/material_animations_primary</item>
+        <item name="android:colorPrimaryDark">@color/material_animations_primary_dark</item>
+        <item name="android:colorAccent">@color/material_animations_accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/text_light</item>
+        <item name="android:statusBarColor">@color/material_animations_primary_dark</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+        <item name="android:titleTextAppearance">@style/MaterialAnimations.TextAppearance.Title</item>
+        <item name="android:windowBackground">@color/light_grey</item>
+    </style>
+
+    <style name="MaterialAnimations.TextAppearance.Title" parent="android:TextAppearance.Material.Title">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+</resources>

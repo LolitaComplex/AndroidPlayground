@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#55000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/Layout_btn1"
+        style="@style/ButtonStyle"
+        android:text="蒙版的制作"
+        />
+
+    <Button
+        android:id="@+id/Layout_btn2"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:text="右边"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:id="@+id/Layout_btn3"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:text="左边"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:id="@+id/Layout_btn4"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:text="中间"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/Layout_btn5"
+        style="@style/ButtonStyle"
+        android:text="底部"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

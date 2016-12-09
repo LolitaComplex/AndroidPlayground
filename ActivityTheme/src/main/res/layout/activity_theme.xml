@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/gereral_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/theme_yellow_primary"
+        app:title="@string/app_name"
+        />
+
+    <LinearLayout
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_holo"
+            style="@style/ButtonStyle"
+            android:text="Holo.Dark"
+            />
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_holoLight"
+            style="@style/ButtonStyle"
+            android:text="Holo.Light"
+            />
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_holoActionBarDark"
+            style="@style/ButtonStyle"
+            android:text="Holo.ActionBar"
+            />
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_mertial"
+            style="@style/ButtonStyle"
+            android:text="Mertial.Dark"
+
+            />
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_materialLight"
+            style="@style/ButtonStyle"
+            android:text="Mertial.Light"
+            />
+
+        <Button
+            android:id="@+id/ThemeActivity_btn_materialActionBarDark"
+            style="@style/ButtonStyle"
+            android:text="Mertial.ActionBar"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        >
+
+        <ImageView
+            android:id="@+id/ThemeActivity_iv_blue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_circle"
+            android:tint="@android:color/holo_blue_bright"
+            />
+
+        <ImageView
+            android:id="@+id/ThemeActivity_iv_gray"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_circle"
+            android:tint="@android:color/darker_gray"
+            />
+
+        <ImageView
+            android:id="@+id/ThemeActivity_iv_purple"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_circle"
+            android:tint="@android:color/holo_purple"
+            />
+
+        <ImageView
+            android:id="@+id/ThemeActivity_iv_cp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_circle"
+            />
+    </LinearLayout>
+</FrameLayout>
+
+

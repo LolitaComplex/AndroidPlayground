@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Holo" parent="android:Theme.Holo" />
+    <style name="Holo.Light" parent="android:Theme.Holo.Light" />
+    <style name="Holo.ActionBar" parent="android:Theme.Holo.Light.DarkActionBar" />
+
+    <style name="Mertial" parent="android:Theme.Holo" />
+    <style name="Mertial.Light" parent="android:Theme.Holo.Light" />
+    <style name="Mertial.ActionBar" parent="android:Theme.Holo.Light.DarkActionBar" />
+    
+    <style name="Global.Blue" parent="Theme.AppCompat">
+        <item name="bgcolor">@color/blue</item>
+    </style>
+
+    <style name="Global.Gray" parent="Theme.AppCompat">
+        <item name="bgcolor">@color/gray</item>
+    </style>
+
+    <style name="Global.Purple" parent="Theme.AppCompat">
+        <item name="bgcolor">@color/purple</item>
+    </style>
+
+    <style name="Global.ColorPrimary" parent="Theme.AppCompat">
+        <item name="bgcolor">@color/colorAccent</item>
+    </style>
+
+    <attr name="bgcolor" format="color|reference"/>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ActivityLaunchMode/ActivityLaunchMode.iml" filepath="$PROJECT_DIR$/ActivityLaunchMode/ActivityLaunchMode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ActivityTheme/ActivityTheme.iml" filepath="$PROJECT_DIR$/ActivityTheme/ActivityTheme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidIPC/AndroidIPC.iml" filepath="$PROJECT_DIR$/AndroidIPC/AndroidIPC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidPlayground.iml" filepath="$PROJECT_DIR$/AndroidPlayground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" filepath="$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" filepath="$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewScroll/ViewScroll.iml" filepath="$PROJECT_DIR$/ViewScroll/ViewScroll.iml" />
+    </modules>
+  </component>
+</project>
