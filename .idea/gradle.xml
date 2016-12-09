@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/ActivityTheme" />
             <option value="$PROJECT_DIR$/AndroidIPC" />
             <option value="$PROJECT_DIR$/AndroidWindow" />
+            <option value="$PROJECT_DIR$/FragmentPagerAdapter" />
             <option value="$PROJECT_DIR$/RecyclerViewItemAnimator" />
             <option value="$PROJECT_DIR$/ViewScroll" />
           </set>

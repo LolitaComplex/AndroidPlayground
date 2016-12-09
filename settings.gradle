@@ -1,1 +1,1 @@
-include ':RecyclerViewItemAnimator', ':ActivityLaunchMode', ':AndroidIPC', ':ActivityTheme', ':AndroidWindow', 'ViewScroll'
+include ':RecyclerViewItemAnimator', ':ActivityLaunchMode', ':AndroidIPC', ':ActivityTheme', ':AndroidWindow', ':FragmentPagerAdapter', 'ViewScroll'
