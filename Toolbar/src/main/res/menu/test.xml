@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/account"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Account" />
+
+    <item
+        android:id="@+id/shpae"
+        android:icon="@drawable/shape"
+        app:showAsAction="ifRoom"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        android:title="Shape" />
+
+    <item
+        android:id="@+id/more"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="never"
+        app:actionProviderClass="com.doing.toolbar.UserProvider"
+        android:title="More" />
+</menu>
