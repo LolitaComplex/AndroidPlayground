@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+              android:layout_height="500dp">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/music"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="歌曲名"
+        android:layout_toRightOf="@id/iv_icon"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="宇多田光"
+        android:layout_toRightOf="@id/iv_icon"
+        android:textSize="18sp"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        tools:text="4:21"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/pause"
+        android:tint="@android:color/black"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btn_pause"
+        android:src="@drawable/play"
+        android:tint="@android:color/black"
+        />
+
+
+</RelativeLayout>

@@ -6,6 +6,7 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="D:\Program\Android\AS\Android Studio\gradle\gradle-2.14.1" />
+        <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -13,13 +14,14 @@
             <option value="$PROJECT_DIR$/ActivityTheme" />
             <option value="$PROJECT_DIR$/AndroidIPC" />
             <option value="$PROJECT_DIR$/AndroidWindow" />
+            <option value="$PROJECT_DIR$/Canvas" />
             <option value="$PROJECT_DIR$/FragmentPagerAdapter" />
+            <option value="$PROJECT_DIR$/Notification" />
             <option value="$PROJECT_DIR$/RecyclerViewItemAnimator" />
             <option value="$PROJECT_DIR$/Toolbar" />
             <option value="$PROJECT_DIR$/ViewScroll" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
