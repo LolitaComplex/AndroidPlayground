@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" filepath="$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Canvas/Canvas.iml" filepath="$PROJECT_DIR$/Canvas/Canvas.iml" />
       <module fileurl="file://$PROJECT_DIR$/FragmentPagerAdapter/FragmentPagerAdapter.iml" filepath="$PROJECT_DIR$/FragmentPagerAdapter/FragmentPagerAdapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageLoader/ImageLoader.iml" filepath="$PROJECT_DIR$/ImageLoader/ImageLoader.iml" />
       <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" filepath="$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Toolbar/Toolbar.iml" filepath="$PROJECT_DIR$/Toolbar/Toolbar.iml" />

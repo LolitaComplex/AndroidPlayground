@@ -1,0 +1,62 @@
+<resources>
+    <string-array name="image_buf">
+        <item>http://img.gov.com.de/2016/12/xueshengzhifu-apic-in-11.jpg</item>
+        <item>http://img.gov.com.de/2016/12/xueshengzhifu-apic-in-14.jpg</item>
+        <item>http://img.gov.com.de/2016/12/xueshengzhifu-apic-in-15.jpg</item>
+        <item>http://img.gov.com.de/2016/12/xueshengzhifu-apic-in-4.jpg</item>
+        <item>http://img.gov.com.de/2016/03/55916372_p0.png</item>
+        <item>http://img.gov.com.de/2016/03/55105144_p0.jpg</item>
+        <item>http://img.gov.com.de/2016/03/49301644_p0.jpg</item>
+        <item>http://img.gov.com.de/2016/03/53368805_p0.jpg</item>
+        <item>http://img.gov.com.de/2016/03/53828753_p1.jpg</item>
+        <item>http://img.gov.com.de/2016/03/55862687_p0.jpg</item>
+        <item>http://img.gov.com.de/2016/03/55643853_p0.jpg</item>
+        <item>http://img.gov.com.de/2016/03/55964387_p5.png</item>
+        <item>http://img.gov.com.de/2016/10/apic.in_2016-10-09_13-00-25.jpg</item>
+        <item>http://img.gov.com.de/2016/09/apic.in_2016-09-16_11-14-34.jpg</item>
+        <item>http://img.gov.com.de/2016/09/apic.in_2016-09-16_11-14-48.jpg</item>
+        <item>http://img.gov.com.de/2016/09/apic.in_2016-09-16_11-15-21.jpg</item>
+        <item>http://img.gov.com.de/2016/09/apic.in_2016-09-16_11-16-08.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-45-24.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-45-28.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-45-31.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-45-40.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-46-07.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-46-10.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-46-12.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-46-26.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-46-53.jpg</item>
+        <item>http://img.gov.com.de/2016/06/apic.in_2016-06-11_15-47-36.jpg</item>
+        <item>http://img.gov.com.de/2016/12/huer-apic-in-16.jpg</item>
+        <item>http://img.gov.com.de/2016/12/huer-apic-in-12.jpg</item>
+        <item>http://img.gov.com.de/2016/12/huer-apic-in-10.jpg</item>
+        <item>http://img.gov.com.de/2016/11/nvpu-apic-in-5.jpg</item>
+        <item>http://img.gov.com.de/2016/10/28_9a14g53ods.jpg</item>
+        <item>http://img.gov.com.de/2016/10/31_67z6bjxitf.jpg</item>
+        <item>http://img.gov.com.de/2016/10/apic.in_2016-10-23_15-07-25.jpg</item>
+        <item>http://img.gov.com.de/2016/10/apic.in_2016-10-23_15-07-49.jpg</item>
+        <item>http://img.gov.com.de/2016/10/apic.in_2016-10-23_15-07-56.jpg</item>
+        <item>http://img.gov.com.de/2016/10/apic.in_2016-10-23_15-10-15.jpg</item>
+        <item>http://img.gov.com.de/2016/11/duanku-apic-in-13.jpg</item>
+        <item>http://img.gov.com.de/2016/11/duanku-apic-in-14.jpg</item>
+        <item>http://img.gov.com.de/2016/12/dunzuo-apic-in-7.jpg</item>
+        <item>http://img.gov.com.de/2016/12/keai-apic-in-17.jpg</item>
+        <item>http://img.gov.com.de/2016/12/keai-apic-in-16.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-23-17.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-23-57.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-23-42.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-23-39.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-24-37.jpg</item>
+        <item>http://img.gov.com.de/2016/12/apic.in_2016-12-10_14-24-32.jpg</item>
+        <item>http://img.gov.com.de/2016/12/luren-apic-in-4.jpg</item>
+        <item>http://img.gov.com.de/2016/12/luren-apic-in-10.jpg</item>
+        <item>http://img.gov.com.de/2016/12/luren-apic-in-19.jpg</item>
+        <item>http://img.gov.com.de/2016/12/yinfa-apic-in-7.jpg</item>
+        <item>http://img.gov.com.de/2016/12/yinfa-apic-in-10.jpg</item>
+        <item>http://img.gov.com.de/2016/12/yinfa-apic-in-12.jpg</item>
+        <item>http://img.gov.com.de/2016/12/yinfa-apic-in-1.jpg</item>
+    </string-array>
+
+
+    <string name="app_name">ImageLoader</string>
+</resources>
