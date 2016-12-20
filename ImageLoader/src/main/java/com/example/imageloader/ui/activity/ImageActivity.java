@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import com.example.imageloader.R;
 import com.example.imageloader.data.engine.ImageLoader;
 
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 public class ImageActivity extends AppCompatActivity {
 
     private static final String TAG = "ImageLoader";
@@ -29,6 +31,25 @@ public class ImageActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(new ImageAdapter(this,
                 getResources().getStringArray(R.array.image_buf)));
 
+        Thread thread = new Thread();
+        thread.interrupt();
+
+        ReentrantReadWriteLock innerLock = new ReentrantReadWriteLock();
+        ReentrantReadWriteLock.WriteLock writeLock = innerLock.writeLock();
+
+        try{
+            writeLock.lock();
+            //写的逻辑
+        } finally {
+            writeLock.unlock();
+        }
+
+        ReentrantReadWriteLock.ReadLock readLock = innerLock.readLock();
+        try {
+            readLock.lock();
+        } finally {
+            readLock.unlock();
+        }
     }
 
     private static class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeHolder> {

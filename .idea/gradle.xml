@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/ImageLoader" />
             <option value="$PROJECT_DIR$/Notification" />
             <option value="$PROJECT_DIR$/RecyclerViewItemAnimator" />
+            <option value="$PROJECT_DIR$/ThreadMode" />
             <option value="$PROJECT_DIR$/Toolbar" />
             <option value="$PROJECT_DIR$/ViewScroll" />
           </set>

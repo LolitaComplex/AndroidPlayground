@@ -22,8 +22,6 @@ import java.util.Random;
 
 public class PixelColorCanvasActivity extends Activity {
 
-
-
     private Paint mPaint;
     private Random mRandom;
 

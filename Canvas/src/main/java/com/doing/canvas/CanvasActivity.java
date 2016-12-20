@@ -1,13 +1,22 @@
 package com.doing.canvas;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.doing.canvas.activity.PixelColorCanvasActivity;
 import com.doing.canvas.activity.TableCanvasActivity;
 
+import java.io.File;
+
 import butterknife.ButterKnife;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class CanvasActivity extends AppCompatActivity {
 
@@ -32,5 +41,7 @@ public class CanvasActivity extends AppCompatActivity {
                                 CanvasActivity.this);
                     }
                 });
+
     }
+
 }
