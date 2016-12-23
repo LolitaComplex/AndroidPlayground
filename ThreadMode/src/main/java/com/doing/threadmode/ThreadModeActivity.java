@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.doing.threadmode.ui.MultiThreadActivity;
 import com.doing.threadmode.ui.SingleThreadActivity;
+import com.doing.threadmode.ui.ThreadPoolActivity;
 
 import butterknife.ButterKnife;
 
@@ -29,6 +30,14 @@ public class ThreadModeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         MultiThreadActivity.start(ThreadModeActivity.this);
+                    }
+                });
+
+        ButterKnife.findById(this,R.id.ThreadModeActivity_btn_pool)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ThreadPoolActivity.start(ThreadModeActivity.this);
                     }
                 });
     }

@@ -2,6 +2,11 @@ package com.doing.threadmode.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.MessageQueue;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,5 +52,6 @@ public class MultiThreadActivity extends AppCompatActivity {
                         MultiRestaurant.getRestaurant().openForBussiness();
                     }
                 });
+
     }
 }

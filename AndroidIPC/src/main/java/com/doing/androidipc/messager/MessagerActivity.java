@@ -87,7 +87,7 @@ public class MessagerActivity extends AppCompatActivity {
                 iBinder.linkToDeath(mDeathRecipient, 0);
                 mClientMessenger.send(message);
             } catch (RemoteException e) {
-                Toast.makeText(getApplicationContext(), "发送异常", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "发生异常", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }

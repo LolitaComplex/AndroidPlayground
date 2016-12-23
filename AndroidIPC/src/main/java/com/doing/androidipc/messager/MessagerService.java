@@ -45,9 +45,12 @@ public class MessagerService extends Service {
         }
     }
 
+
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        Log.w(TAG, "onBind: ");
         return mMessenger.getBinder();
     }
 
@@ -55,9 +58,12 @@ public class MessagerService extends Service {
     public void onCreate() {
         super.onCreate();
         mMessenger = new Messenger(new ServieHandler());
+        Log.w(TAG, "onCreate: ");
     }
 
-
-
-
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.w(TAG, "onStartCommand: ");
+        return super.onStartCommand(intent, flags, startId);
+    }
 }

@@ -6,11 +6,13 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.webkit.MimeTypeMap;
 import android.widget.FrameLayout;
 
 import com.doing.theme.ui.activity.HoloActionBarDarkActivity;

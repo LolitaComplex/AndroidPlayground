@@ -1,9 +1,13 @@
 package com.doing.threadmode.data;
 
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.LinkedList;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 public class MultiRestaurant {
 
@@ -17,8 +21,13 @@ public class MultiRestaurant {
     private Thread chief;
     private Thread server;
 
-    private boolean open = false;
+    ReentrantLock lockOrder = new ReentrantLock();
+    ReentrantLock lockChief = new ReentrantLock();
 
+    Condition conditionOrder = lockOrder.newCondition();
+    Condition conditionChief = lockChief.newCondition();
+
+    private boolean open = false;
 
     private MultiRestaurant() {
     }
@@ -36,6 +45,10 @@ public class MultiRestaurant {
     public MultiRestaurant colse() {
         Log.w(TAG, "colse: 饭店关门了");
         open = false;
+
+        chief.interrupt();
+        server.interrupt();
+
         return this;
     }
 
@@ -44,6 +57,7 @@ public class MultiRestaurant {
             guestComming();
             startOrdering();
             startCooking();
+            serving();
         }
     }
 
@@ -53,50 +67,105 @@ public class MultiRestaurant {
     }
 
     private void startOrdering() {
-        orders.add("订单1: 驴Xxx抄蒜苗");
-        orders.add("订单2: 西红柿炒蛋");
+        try {
+            lockOrder.lock();
+            orders.offer("订单1: 驴Xxx抄蒜苗");
+            orders.offer("订单2: 西红柿炒蛋");
 
-        Log.w(TAG, "startOrdering: 订单接受完毕" + orders.toString());
+            Log.w(TAG, "startOrdering: 订单接受完毕" + orders.toString());
+            conditionOrder.signal();
+        } finally {
+            lockOrder.unlock();
+        }
     }
 
     private void startCooking() {
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    if (!orders.isEmpty()) {
-                        for (String order = orders.poll(); order != null
-                                ; order = orders.poll()) {
-                            for (int i = 0; i < 1000; i++) {
-                                for (int j = 0; j < 1000; j++) {
+        if (chief == null || chief.isInterrupted()) {
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    while (true) {
+                        if (chief.isInterrupted()) {
+                            Log.w(TAG, "startCooking: 已经停止烹饪");
+                            break;
+                        }
+                        try {
+                            lockOrder.lock();
+                            String order = "";
 
+                            if (!orders.isEmpty()) {
+                                while (!TextUtils.isEmpty(order = orders.poll())) {
+                                    for (int i = 0; i < 1000; i++) {
+                                        for (int j = 0; j < 1000; j++) {
+
+                                        }
+                                    }
+
+                                    try {
+                                        lockChief.lock();
+                                        cookies.offer(order);
+                                        Log.w(TAG, "startCooking: 已完成一道订单——" + order);
+                                        conditionChief.signal();
+                                    } finally {
+                                        lockChief.unlock();
+                                    }
+                                }
+                            } else {
+                                try {
+                                    conditionOrder.await();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
                                 }
                             }
-                            cookies.offer(order);
-                            Log.w(TAG, "startCooking: 已完成一道订单——" + order);
-                            serving();
+                        } finally {
+                            lockOrder.unlock();
                         }
                     }
                 }
-            }
-        };
-
-        chief = new Thread(runnable);
-        chief.start();
+            };
+            chief = new Thread(runnable);
+            chief.start();
+        }
     }
 
     private void serving() {
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                for (int j = 0; j < 1000; j++) {
 
+        if (server == null || server.isInterrupted()) {
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+
+                    while (true) {
+                        try {
+                            lockChief.lock();
+                            if (!cookies.isEmpty()) {
+
+                                if (server.isInterrupted()) {
+                                    break;
+                                }
+
+                                for (int j = 0; j < 1000; j++) {
+
+                                }
+
+                                String cookie = "";
+                                while (!TextUtils.isEmpty(cookie = cookies.poll())) {
+                                    Log.w(TAG, "serving: 上餐：" + cookie + "，顾客开始食用");
+                                }
+                            } else {
+                                conditionChief.await();
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } finally {
+                            lockChief.unlock();
+                        }
+                    }
                 }
-                Log.w(TAG, "serving: 上餐：" + cookies.poll() + "，顾客开始食用");
-            }
-        };
+            };
 
-        server = new Thread(runnable);
-        server.start();
+            server = new Thread(runnable);
+            server.start();
+        }
     }
 }

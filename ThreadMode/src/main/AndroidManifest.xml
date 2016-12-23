@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".ui.MultiThreadActivity">
         </activity>
+        <activity android:name=".ui.ThreadPoolActivity">
+        </activity>
     </application>
 
 </manifest>

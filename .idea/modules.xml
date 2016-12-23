@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/ImageLoader/ImageLoader.iml" filepath="$PROJECT_DIR$/ImageLoader/ImageLoader.iml" />
       <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" filepath="$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" filepath="$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadMode/ThreadMode.iml" filepath="$PROJECT_DIR$/ThreadMode/ThreadMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/Toolbar/Toolbar.iml" filepath="$PROJECT_DIR$/Toolbar/Toolbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewScroll/ViewScroll.iml" filepath="$PROJECT_DIR$/ViewScroll/ViewScroll.iml" />
