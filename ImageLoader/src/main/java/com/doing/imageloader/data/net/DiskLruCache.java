@@ -1,4 +1,4 @@
-package com.example.imageloader.data.net;
+package com.doing.imageloader.data.net;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;

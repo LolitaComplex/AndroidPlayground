@@ -1,4 +1,4 @@
-package com.example.imageloader.data.engine;
+package com.doing.imageloader.data.engine;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,10 +12,9 @@ import android.util.LruCache;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.imageloader.R;
-import com.example.imageloader.data.net.DiskLruCache;
-import com.example.imageloader.data.net.OkHttpUtil;
-import com.example.imageloader.utils.IOUtils;
+import com.doing.imageloader.data.net.DiskLruCache;
+import com.doing.imageloader.data.net.OkHttpUtil;
+import com.doing.imageloader.utils.IOUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -1,7 +1,6 @@
 package com.doing.runtimepermisstion.utils;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;

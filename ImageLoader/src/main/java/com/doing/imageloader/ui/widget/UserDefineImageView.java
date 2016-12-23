@@ -1,4 +1,4 @@
-package com.example.imageloader.ui.widget;
+package com.doing.imageloader.ui.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -62,8 +62,32 @@ public class MessagerService extends Service {
     }
 
     @Override
+    public void onStart(Intent intent, int startId) {
+        Log.w(TAG, "onStart: ");
+        super.onStart(intent, startId);
+    }
+
+    @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.w(TAG, "onStartCommand: ");
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.w(TAG, "onUnbind: ");
+        return true;
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        Log.w(TAG, "onRebind: ");
+        super.onRebind(intent);
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.w(TAG, "onDestroy: ");
+        super.onDestroy();
     }
 }

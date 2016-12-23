@@ -1,4 +1,4 @@
-package com.example.imageloader.utils;
+package com.doing.imageloader.utils;
 
 import java.io.Closeable;
 import java.io.IOException;

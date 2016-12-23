@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.example.imageloader.ui.widget.UserDefineImageView
+    <com.doing.imageloader.ui.widget.UserDefineImageView
         android:id="@+id/iv"
         android:scaleType="centerCrop"
         android:layout_width="100dp"

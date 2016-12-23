@@ -49,9 +49,7 @@ public class MessagerActivity extends AppCompatActivity {
 
     private void linkService() {
         mServiceIntent = new Intent(this, MessagerService.class);
-        startService(mServiceIntent);
         mMessagerConection = new MessagerConection();
-        bindService(mServiceIntent, mMessagerConection, Context.BIND_AUTO_CREATE);
     }
 
     public void sendToService(View view) {
@@ -69,19 +67,13 @@ public class MessagerActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        unbindService(mMessagerConection);
-        stopService(mServiceIntent);
-
-        super.onDestroy();
-    }
-
     private class MessagerConection implements ServiceConnection {
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            mClientMessenger = new Messenger(iBinder);
+            if (mClientMessenger == null) {
+                mClientMessenger = new Messenger(iBinder);
+            }
             Message message = Message.obtain(null, MessagerService.MESSAGER_SERVICE_WHAT);
             try {
                 iBinder.linkToDeath(mDeathRecipient, 0);
@@ -112,4 +104,21 @@ public class MessagerActivity extends AppCompatActivity {
         }
     };
 
+    //=========== Service生命周期运行顺序测试 ================
+
+    public void startService(View view) {
+        startService(mServiceIntent);
+    }
+
+    public void bindService(View view) {
+        bindService(mServiceIntent, mMessagerConection, Context.BIND_AUTO_CREATE);
+    }
+
+    public void unbindService(View view){
+        unbindService(mMessagerConection);
+    }
+
+    public void stopService(View view) {
+        stopService(mServiceIntent);
+    }
 }

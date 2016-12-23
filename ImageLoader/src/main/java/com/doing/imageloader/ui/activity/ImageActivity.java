@@ -1,4 +1,4 @@
-package com.example.imageloader.ui.activity;
+package com.doing.imageloader.ui.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.imageloader.R;
-import com.example.imageloader.data.engine.ImageLoader;
+import com.doing.imageloader.data.engine.ImageLoader;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 

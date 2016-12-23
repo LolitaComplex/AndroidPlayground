@@ -1,4 +1,4 @@
-package com.example.imageloader.data.net;
+package com.doing.imageloader.data.net;
 
 import java.io.IOException;
 import java.io.InputStream;
