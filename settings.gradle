@@ -1,4 +1,4 @@
-include ':RecyclerViewItemAnimator', ':Notification', ':ImageLoader', ':ThreadMode', ':RuntimePermisstion',
+include ':RecyclerViewItemAnimator', ':Notification', ':ImageLoader', ':ThreadMode', ':RuntimePermisstion', ':TestMoudle',
         ':ActivityLaunchMode',
         ':AndroidIPC',
         ':ActivityTheme',
