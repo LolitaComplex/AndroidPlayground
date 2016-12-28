@@ -13,6 +13,8 @@ import android.util.Log;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static android.os.Build.VERSION_CODES.M;
+
 public class AidlService extends Service {
 
     private final static String TAG = "AidlService";
@@ -21,7 +23,7 @@ public class AidlService extends Service {
     private Binder mBinder = new AidlManager.Stub(){
 
         @Override
-        public boolean addUser(String text, List<String> arg, User user) throws RemoteException {
+        public boolean addUser(String text, String name, List<String> arg, User user) throws RemoteException {
             Log.e(TAG, "Server：接收" + text);
             Log.e(TAG, "Server：接收" + user.toString());
 //            arg = new ArrayList<>();
@@ -52,8 +54,6 @@ public class AidlService extends Service {
             mCallbackBuf.unregister(callback);
         }
     };
-
-
 
 
     @Nullable

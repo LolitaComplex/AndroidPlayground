@@ -2,10 +2,17 @@ package com.doing.viewscroll.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewConfigurationCompat;
+import android.support.v4.view.ViewGroupCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Scroller;
 
@@ -31,6 +38,7 @@ public class ScrollView extends ImageView {
         mScroller = new Scroller(getContext());
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int moveX = (int) event.getRawX();
@@ -45,11 +53,34 @@ public class ScrollView extends ImageView {
             case MotionEvent.ACTION_MOVE:
                 int deltaX = moveX - startX;
                 int deltaY = moveY - startY;
-                Log.e(TAG, "deltaX = " + deltaX + " === deltaY = " + deltaY);
+//                Log.e(TAG, "deltaX = " + deltaX + " === deltaY = " + deltaY);
                 int translationX = (int) (ViewCompat.getTranslationX(this) + deltaX);
                 int translationY = (int) (ViewCompat.getTranslationY(this) + deltaY);
-                ViewCompat.setTranslationX(this,translationX);
-                ViewCompat.setTranslationY(this,translationY);
+
+                //移动方式1
+//                layout(getLeft() + translationX, getTop() + translationY, getRight()
+//                        + translationX, getBottom() + translationY);
+
+                //移动方式2
+//                offsetLeftAndRight(translationX);
+//                offsetTopAndBottom(translationY);
+
+                //移动方式3
+//                ((ViewGroup) getParent()).scrollBy(-translationX, -translationY);
+
+                //移动方式4
+//                ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
+//                layoutParams.topMargin = getTop() + translationY;
+//                layoutParams.leftMargin = getLeft() + translationX;
+//                setLayoutParams(layoutParams);
+
+                //移动方式5
+                ViewCompat.setTranslationX(this, translationX);
+                ViewCompat.setTranslationY(this, translationY);
+
+//                ViewCompat.offsetLeftAndRight(this, translationX);
+//                ViewCompat.offsetTopAndBottom(this, translationY);
+
                 break;
 
             case MotionEvent.ACTION_DOWN:
@@ -62,9 +93,27 @@ public class ScrollView extends ImageView {
                 break;
         }
 
+        ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        Log.v(TAG, "getTranslationX() =" + getTranslationX() + ":::::::getTranslationY()=" + getTranslationY());
+        Log.d(TAG, "getX() =" + getX() + ":::::::getY()=" + getY());
+        Log.w(TAG, "left =" + getLeft() + "\ttop=" + getTop() + "\tright=" + getRight() + "\tbottom=" + getBottom());
+        Log.i(TAG, "scrollX =" + getScrollX() + "\tscrollY=" + getScrollY());
         startX = moveX;
         startY = moveY;
         boolean superTouchEvnet = super.onTouchEvent(event);
+
+        //初始化
+        VelocityTracker tracker = VelocityTracker.obtain();
+        tracker.addMovement(event);
+        tracker.computeCurrentVelocity(1000);
+        float xVelocity = tracker.getXVelocity();
+        float yVelocity = tracker.getYVelocity();
+        //使用完毕清空资源
+        tracker.clear();
+        tracker.recycle();
+
+        Log.e(TAG, "xVelocity = " + tracker.getXVelocity() + "\tyVelocity" + tracker.getYVelocity());
+
         return actionDown && superTouchEvnet;
     }
 

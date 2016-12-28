@@ -41,7 +41,7 @@ public class AidlActivity extends AppCompatActivity {
         list.add("aaaa");
         boolean flag = false;
         try {
-            flag = mAidlManager.addUser("这是个啥？", list, new User("芙兰朵露", 22, 3));
+            flag = mAidlManager.addUser("这是个啥？", "name", list, new User("芙兰朵露", 22, 3));
         } catch (RemoteException e) {
             e.printStackTrace();
         }

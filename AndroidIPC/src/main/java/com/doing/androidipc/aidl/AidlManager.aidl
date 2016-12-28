@@ -8,7 +8,7 @@ import com.doing.androidipc.aidl.User;
 
 interface AidlManager {
 
-    boolean addUser(in String text,out List<String> arg,in User user);
+    boolean addUser(in String text,in String name,out List<String> arg,in User user);
     void registCallback(Callback callback);
     oneway void unRegistCallback(Callback callback);
 

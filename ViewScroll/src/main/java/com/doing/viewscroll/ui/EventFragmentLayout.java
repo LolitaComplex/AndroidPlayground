@@ -21,11 +21,19 @@ public class EventFragmentLayout extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return super.onInterceptTouchEvent(ev);
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
         return true;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return super.dispatchTouchEvent(event);
     }
 }

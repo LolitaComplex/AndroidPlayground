@@ -1,11 +1,15 @@
 package com.doing.viewscroll;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.doing.viewscroll.ui.ScrollView;
 
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
@@ -22,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        float density = getResources().getDisplayMetrics().density;
+        final int px = (int) (250 / density);
+
+        final View scrollView = findViewById(R.id.MainActivity_iv);
+
 
         findViewById(R.id.MainActivity_iv).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
                 mark = index + 1;
             }
         });
+    }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        return super.dispatchKeyEvent(event);
     }
 }

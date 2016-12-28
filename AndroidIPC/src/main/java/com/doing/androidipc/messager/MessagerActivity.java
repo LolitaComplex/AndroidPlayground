@@ -98,7 +98,7 @@ public class MessagerActivity extends AppCompatActivity {
             if (mClientMessenger == null) {
                 return;
             }
-            Log.e(TAG, "死亡重连接");
+            Log.d(TAG, "死亡重连接");
             mClientMessenger.getBinder().unlinkToDeath(mDeathRecipient, 0);
             mClientMessenger = null;
         }

@@ -3,7 +3,6 @@
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/ActivityLaunchMode/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/ActivityTheme/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/AndroidIPC/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/AndroidWindow/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/Canvas/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/Notification/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/annotations.zip!/" />
@@ -17,7 +16,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.0.1/support-media-compat-25.0.1-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.0.1/support-media-compat-25.0.1-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.0.1/support-media-compat-25.0.1-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.0.1/support-media-compat-25.0.1-sources.jar!/" />
