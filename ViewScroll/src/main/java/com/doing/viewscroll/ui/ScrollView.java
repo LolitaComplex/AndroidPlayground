@@ -46,7 +46,7 @@ public class ScrollView extends ImageView {
 
 
         //当ViewParent不拦截ACTION_DOWN事件，不过拦截其他事件时，则可以通过此方法强制不让父控件拦截
-        getParent().requestDisallowInterceptTouchEvent(true);
+//        getParent().requestDisallowInterceptTouchEvent(true);
         boolean actionDown = true;
 
         switch (event.getAction()) {
@@ -84,7 +84,7 @@ public class ScrollView extends ImageView {
                 break;
 
             case MotionEvent.ACTION_DOWN:
-                actionDown = true;
+                actionDown = false;
                 break;
             case MotionEvent.ACTION_UP:
                 actionDown = true;

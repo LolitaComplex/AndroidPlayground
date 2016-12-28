@@ -23,6 +23,9 @@ public class EventFragmentLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_UP) {
+            return true;
+        }
         return super.onInterceptTouchEvent(ev);
     }
 
@@ -34,6 +37,20 @@ public class EventFragmentLayout extends FrameLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
+                break;
+        }
         return super.dispatchTouchEvent(event);
     }
 }
