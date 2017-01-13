@@ -40,16 +40,17 @@ public class SampleWindow {
 
     private WindowManager.LayoutParams createWindowLayoutParams(int width, int height) {
         WindowManager.LayoutParams params = new WindowManager.LayoutParams();
-
-        params.type = WindowManager.LayoutParams.TYPE_APPLICATION;
+        params.alpha = 0;
+        params.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
         params.format = PixelFormat.RGBA_8888;
         params.gravity = Gravity.LEFT;
         params.width = width;
         params.height = height;
         params.x = 0;
         params.y = 0;
-        params.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
 
+        params.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE;
+        params.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
 
         return params;
     }

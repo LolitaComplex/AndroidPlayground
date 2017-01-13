@@ -121,4 +121,10 @@ public class MessagerActivity extends AppCompatActivity {
     public void stopService(View view) {
         stopService(mServiceIntent);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int x = 3 / 0;
+    }
 }

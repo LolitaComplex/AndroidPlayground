@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.doing.androidipc.aidl.AidlActivity;
 import com.doing.androidipc.messager.MessagerActivity;
@@ -26,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void startAidl(View view) {
         startActivity(new Intent(this, AidlActivity.class));
-        getResources().getString(R.string.app_name);
-        getResources().getLayout(R.layout.activity_main);
-        getResources().getDimension(R.dimen.activity_horizontal_margin);
+//        getResources().getString(R.string.app_name);
+//        getResources().getLayout(R.layout.activity_main);
+//        getResources().getDimension(R.dimen.activity_horizontal_margin);
 //        LayoutInflater.from(this).inflate(R.layout.activity_main, null);
-
+        TextView textView ;
+//        textView.setEnabled();
     }
+
+
 }

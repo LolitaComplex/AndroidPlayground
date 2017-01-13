@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.doing.viewscroll.ui.DragViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <!--<TextView-->
+        <!--android:text="Content"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:clickable="true"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@android:color/darker_gray"-->
+        <!--/>-->
+    <com.doing.viewscroll.ui.DrawRecyclerView
+        android:id="@+id/recycler"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:text="Menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="300dp"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_red_dark"
+        />
+</com.doing.viewscroll.ui.DragViewGroup>

@@ -58,6 +58,7 @@ public class WindowActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.WindowActivity_productDialog:
                 mSimpleWindow = new SimpleWindow(this);
                 mSimpleWindow.start(600, 1000);
+                finish();
                 break;
         }
     }

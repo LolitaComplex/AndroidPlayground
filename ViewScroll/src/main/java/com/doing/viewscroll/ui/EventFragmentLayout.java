@@ -23,15 +23,12 @@ public class EventFragmentLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_UP) {
-            return true;
-        }
         return super.onInterceptTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.e("EventFragmentLayout", "MotionEvent =" + event.getAction());
+        Log.e("EventFragmentLayout", "onTouchEvent =" + event.getAction());
         return true;
     }
 
@@ -53,4 +50,5 @@ public class EventFragmentLayout extends FrameLayout {
         }
         return super.dispatchTouchEvent(event);
     }
+
 }

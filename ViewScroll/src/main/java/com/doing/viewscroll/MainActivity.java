@@ -1,11 +1,18 @@
 package com.doing.viewscroll;
 
+import android.animation.ObjectAnimator;
+import android.content.Intent;
+import android.nfc.Tag;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 
 import com.doing.viewscroll.ui.ScrollView;
 
@@ -16,21 +23,21 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static rx.schedulers.Schedulers.start;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private int mark;
 
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        float density = getResources().getDisplayMetrics().density;
-        final int px = (int) (250 / density);
-
-        final View scrollView = findViewById(R.id.MainActivity_iv);
 
 
         findViewById(R.id.MainActivity_iv).setOnClickListener(new View.OnClickListener() {
@@ -63,17 +70,73 @@ public class MainActivity extends AppCompatActivity {
                         });
 
                 mark = index + 1;
+
+                ObjectAnimator.ofFloat(new ViewWrapwer(v), "verticalOffset", 100).start();
             }
         });
+
+
+        findViewById(R.id.btn_vdh).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,
+                        ViewDragHelperActivity.class));
+            }
+        });
+
+        findViewById(R.id.MainActivity_iv1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ObjectAnimator.ofFloat(v, "translationY", 100).start();
+            }
+        });
+        findViewById(R.id.MainActivity_iv1).offsetTopAndBottom(100);
+    }
+
+    private class ViewWrapwer {
+
+        private View view;
+
+        public ViewWrapwer(View view){
+            this.view = view;
+        }
+
+        public void setVerticalOffset(float offset) {
+            int offsetLayout = (int) offset;
+            view.offsetTopAndBottom(offsetLayout);
+//            view.setTranslationY(offset);
+            Log.d(TAG, "setVerticalOffset: " + offset);
+        }
+
+        public float getVerticalOffset() {
+            return 0;
+        }
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.w(TAG, "dispatchTouchEvent: " + ev.getAction());
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.w(TAG, "onTouchEvent: " + event.getAction());
+        return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         return super.dispatchKeyEvent(event);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
