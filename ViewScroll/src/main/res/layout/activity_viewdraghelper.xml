@@ -1,29 +1,565 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.doing.viewscroll.ui.DragViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<com.doing.viewscroll.ui.DragViewGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <!--<TextView-->
-        <!--android:text="Content"-->
-        <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:gravity="center"-->
-        <!--android:clickable="true"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="@android:color/darker_gray"-->
-        <!--/>-->
-    <com.doing.viewscroll.ui.DrawRecyclerView
+    <!--android:text="Content"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:clickable="true"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/darker_gray"-->
+    <!--/>-->
+    <com.doing.viewscroll.ui.DragRecyclerView
         android:id="@+id/recycler"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_margin="100dp"
+        android:columnCount="8"
+        >
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout><FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_0"/>
+    </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout><FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_0"/>
+    </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout>
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_0"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_2"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_3"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_4"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_5"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_6"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_7"/>
+        </FrameLayout>
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_8"/>
+        </FrameLayout>
+
+
+        <FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_1"/>
+        </FrameLayout>
+
+
+    </com.doing.viewscroll.ui.DragRecyclerView>
 
     <TextView
-        android:text="Menu"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:layout_width="300dp"
-        android:gravity="center"
         android:layout_height="match_parent"
         android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:text="Menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         />
 </com.doing.viewscroll.ui.DragViewGroup>

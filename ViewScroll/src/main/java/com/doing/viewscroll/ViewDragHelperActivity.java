@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -18,7 +19,7 @@ import android.widget.Toast;
 public class ViewDragHelperActivity extends AppCompatActivity {
 
     private static final String TAG = "ViewDragHelperActivity";
-    private LinearLayout recyclerView;
+    private GridLayout recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,27 +27,24 @@ public class ViewDragHelperActivity extends AppCompatActivity {
         setContentView(R.layout.activity_viewdraghelper);
 
         LayoutInflater inflater = LayoutInflater.from(this);
-        recyclerView = (LinearLayout) findViewById(R.id.recycler);
+        recyclerView = (GridLayout) findViewById(R.id.recycler);
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
-        );
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-
-
-        for (int x = 0, position = 0; x < 20; x++) {
-            LinearLayout linearLayout = new LinearLayout(this);
-            recyclerView.addView(linearLayout, params);
-            for (int y = 0; y < 3; y++) {
-                ImageView imageView = (ImageView) inflater.inflate(R.layout.item_recycler,
-                        linearLayout, false);
-                int id = ViewDragHelperActivity.this.getResources().getIdentifier(
-                        "image_" + position % 8, "drawable", getPackageName());
-                imageView.setImageResource(id);
-                linearLayout.addView(imageView);
-                position++;
-            }
-        }
+//        for (int x = 0, position = 0; x < 20; x++) {
+//            LinearLayout linearLayout = new LinearLayout(this);
+//            recyclerView.addView(linearLayout, params);
+//            for (int y = 0; y < 3; y++) {
+//                ImageView imageView = (ImageView) inflater.inflate(R.layout.item_recycler,
+//                        linearLayout, false);
+//                int id = ViewDragHelperActivity.this.getResources().getIdentifier(
+//                        "image_" + position % 8, "drawable", getPackageName());
+//                imageView.setImageResource(id);
+//                linearLayout.addView(imageView);
+//                position++;
+//            }
+//        }
 //        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
 //        recyclerView.setAdapter(new RecyclerAdapter(this));
     }
