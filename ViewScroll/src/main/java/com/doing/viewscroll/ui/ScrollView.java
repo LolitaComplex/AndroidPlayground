@@ -2,6 +2,8 @@ package com.doing.viewscroll.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewConfigurationCompat;
@@ -17,6 +19,9 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Scroller;
+
+import static android.R.attr.translationX;
+import static android.R.attr.translationY;
 
 public class ScrollView extends ImageView {
 
@@ -145,14 +150,14 @@ public class ScrollView extends ImageView {
         int scrollY = getScrollY();
         int deltaY = destY - scrollY;
         mScroller.startScroll(scrollX, scrollY, deltaX, deltaY, 1000);
-        invalidate();
+        ViewCompat.postInvalidateOnAnimation(this);
     }
 
     @Override
     public void computeScroll() {
         if (mScroller.computeScrollOffset()) {
             scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
-            postInvalidate();
+            ViewCompat.postInvalidateOnAnimation(this);
         }
     }
 

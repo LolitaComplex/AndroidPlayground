@@ -1,22 +1,16 @@
-package com.doing.canvas;
+package main.java.com.doing.canvas;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import com.doing.canvas.activity.PixelColorCanvasActivity;
-import com.doing.canvas.activity.TableCanvasActivity;
-
-import java.io.File;
+import com.doing.canvas.R;
 
 import butterknife.ButterKnife;
+import main.java.com.doing.canvas.activity.PixelColorCanvasActivity;
+import main.java.com.doing.canvas.activity.TableCanvasActivity;
+import main.java.com.doing.canvas.surface.activity.SurfaceActivity;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class CanvasActivity extends AppCompatActivity {
 
@@ -25,7 +19,7 @@ public class CanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
 
-        ButterKnife.findById(this,R.id.CanvasActivity_table)
+        ButterKnife.findById(this, R.id.CanvasActivity_table)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -42,6 +36,13 @@ public class CanvasActivity extends AppCompatActivity {
                     }
                 });
 
+        ButterKnife.findById(this, R.id.CanvasActivity_surface)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        SurfaceActivity.start(CanvasActivity.this);
+                    }
+                });
     }
 
 }

@@ -1,6 +1,8 @@
 package com.doing.viewscroll;
 
 import android.animation.ObjectAnimator;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Build;
@@ -71,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
                 mark = index + 1;
 
-                ObjectAnimator.ofFloat(new ViewWrapwer(v), "verticalOffset", 100).start();
+//                ObjectAnimator.ofFloat(new ViewWrapwer(v), "verticalOffset", 100).start();
             }
         });
-
+        getSystemService(Context.ACTIVITY_SERVICE);
 
         findViewById(R.id.btn_vdh).setOnClickListener(new View.OnClickListener() {
             @Override

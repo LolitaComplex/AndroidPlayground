@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadFactory;
@@ -135,8 +136,10 @@ public class ImageLoader {
             mDiskLruCache = DiskLruCache.open(filesDir, 1, 1, mDiskCacheSize);
         } catch (IOException e) {
             e.printStackTrace();
+
         }
     }
+
 
     public ImageLoader url(String url) {
         this.url = url;

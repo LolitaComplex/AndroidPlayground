@@ -1,6 +1,7 @@
 package com.doing.viewscroll.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
@@ -45,12 +46,27 @@ public class DragViewGroup extends FrameLayout {
 
         setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
                 getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
+
+        Log.d(TAG, "onMeasure: ");
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         mMenu.layout(-mMenuMeasuredWidth, 0, 0, bottom);
         mContent.layout(left, top, right, bottom);
+        Log.d(TAG, "onLayout: ");
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Log.d(TAG, "onDraw: ");
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        Log.d(TAG, "onSizeChanged: ");
     }
 
     @Override
@@ -58,6 +74,7 @@ public class DragViewGroup extends FrameLayout {
         super.onFinishInflate();
         mMenu = this.getChildAt(1);
         mContent = this.getChildAt(0);
+        Log.d(TAG, "onFinishInflate: ");
     }
 
     @Override
@@ -65,6 +82,7 @@ public class DragViewGroup extends FrameLayout {
         super.onAttachedToWindow();
         mViewDragHelper = ViewDragHelper.create(this, mCallback);
         mViewDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
+        Log.d(TAG, "onAttachedToWindow: ");
     }
 
     private ViewDragHelper.Callback mCallback = new ViewDragHelper.Callback() {

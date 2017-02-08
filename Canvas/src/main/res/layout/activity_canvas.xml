@@ -23,5 +23,10 @@
         android:text="PixelColorCanvas"
         />
 
+    <Button
+        android:id="@+id/CanvasActivity_surface"
+        style="@style/ButtonStyle"
+        android:text="Surface"
+        />
 
 </LinearLayout>

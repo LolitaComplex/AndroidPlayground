@@ -52,7 +52,7 @@ public class ImageActivity extends AppCompatActivity {
         }
     }
 
-    private static class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeHolder> {
+    private static class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder> {
 
         private String[] data;
         private LayoutInflater layoutInflater;
@@ -72,17 +72,17 @@ public class ImageActivity extends AppCompatActivity {
 
 
         @Override
-        public ImgaeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = layoutInflater.inflate(R.layout.item_image, parent, false);
             View view = itemView.findViewById(R.id.iv);
             view.setLayoutParams(new CardView.LayoutParams(
                     width, height / 2
             ));
-            return new ImgaeHolder(itemView);
+            return new ImageHolder(itemView);
         }
 
         @Override
-        public void onBindViewHolder(ImgaeHolder holder, int position) {
+        public void onBindViewHolder(ImageHolder holder, int position) {
             Log.d(TAG, "onBindViewHolder: " + data[position]);
             loader.url(data[position]).size(width, height).into(holder.image);
         }
@@ -92,10 +92,10 @@ public class ImageActivity extends AppCompatActivity {
             return data.length;
         }
 
-        class ImgaeHolder extends RecyclerView.ViewHolder {
+        class ImageHolder extends RecyclerView.ViewHolder {
             ImageView image;
 
-            ImgaeHolder(View view) {
+            ImageHolder(View view) {
                 super(view);
                 image = (ImageView) view.findViewById(R.id.iv);
             }

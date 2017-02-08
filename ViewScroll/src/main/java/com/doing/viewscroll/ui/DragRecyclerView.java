@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 
+import com.doing.viewscroll.R;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -56,6 +58,7 @@ public class DragRecyclerView extends GridLayout {
         for (int i = 0; i < this.getChildCount(); i++) {
             mAllChild.add(getChildAt(i));
         }
+
     }
 
     private class DragCallback extends ViewDragHelper.Callback{
@@ -115,6 +118,7 @@ public class DragRecyclerView extends GridLayout {
 
     private boolean offsetHalfHeight(View child, int top) {
         int height = child.getHeight();
+
 //        Log.d(TAG, "Top=" + top + "\tCaptureViewY=" + mCaptureViewY + "\theight" + height);
         return (Math.abs(top - mCaptureViewY) % height) >= height / 2;
     }
@@ -187,7 +191,6 @@ public class DragRecyclerView extends GridLayout {
 //        mAnimatorList.add(translationY);
         //最后一种迫不得已使用TransitionManager来实现
         currentView.offsetTopAndBottom((int) (targetViewY - currentView.getY()));
-
     }
 
     private void addHorzitalAnimatorInList(final View currentView, float targetViewX) {

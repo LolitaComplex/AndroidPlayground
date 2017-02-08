@@ -1,4 +1,4 @@
-package com.doing.canvas.widget;
+package main.java.com.doing.canvas.widget;
 
 import android.animation.Keyframe;
 import android.animation.ObjectAnimator;

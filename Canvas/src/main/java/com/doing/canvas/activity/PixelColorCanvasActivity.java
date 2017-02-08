@@ -1,4 +1,4 @@
-package com.doing.canvas.activity;
+package main.java.com.doing.canvas.activity;
 
 import android.app.Activity;
 import android.content.Context;

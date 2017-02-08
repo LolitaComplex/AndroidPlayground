@@ -34,32 +34,32 @@ public class SonActivity1 extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        if (view.getId() == R.id.actionmode) {
-            SonActivity1.this.startActionMode(new ActionMode.Callback() {
-                @Override
-                public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                    actionMode.getMenuInflater().inflate(R.menu.test, menu);
-                    return true;
-                }
-
-                @Override
-                public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-                    return false;
-                }
-
-                @Override
-                public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-                    return false;
-                }
-
-                @Override
-                public void onDestroyActionMode(ActionMode actionMode) {
-
-                }
-            });
-        } else {
-            SonActivity1.start(this);
-        }
+//        if (view.getId() == R.id.actionmode) {
+//            SonActivity1.this.startActionMode(new ActionMode.Callback() {
+//                @Override
+//                public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+//                    actionMode.getMenuInflater().inflate(R.menu.test, menu);
+//                    return true;
+//                }
+//
+//                @Override
+//                public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+//                    return false;
+//                }
+//
+//                @Override
+//                public void onDestroyActionMode(ActionMode actionMode) {
+//
+//                }
+//            });
+//        } else {
+//            SonActivity1.start(this);
+//        }
     }
 
     @Override
