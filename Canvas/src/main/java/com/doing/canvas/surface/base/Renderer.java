@@ -1,6 +1,7 @@
-package main.java.com.doing.canvas.surface.base;
+package com.doing.canvas.surface.base;
 
 import android.graphics.Canvas;
+
 
 /**
  * Class description here

@@ -1,13 +1,14 @@
-package main.java.com.doing.canvas.surface.renderer;
+package com.doing.canvas.surface.renderer;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import main.java.com.doing.canvas.surface.base.Frame;
-import main.java.com.doing.canvas.surface.base.Renderer;
-import main.java.com.doing.canvas.surface.frame.FiniteFrame;
+import com.doing.canvas.surface.base.Frame;
+import com.doing.canvas.surface.base.Renderer;
+import com.doing.canvas.surface.frame.FiniteFrame;
+
 
 /**
  * Class description here

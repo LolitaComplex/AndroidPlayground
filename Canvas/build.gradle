@@ -21,23 +21,22 @@ android {
 
     sourceSets {
         main {
-            java.srcDirs=['src']
+//            java.srcDirs=['src']
             res.srcDirs=['src/main/res/',
                         'src/main/res/layout/activity',
                         'src/main/res/layout/fragment']
             assets.srcDirs=['assets']
-            jni.srcDirs=['jni']
+//            jni.srcDirs=['jni']
             jniLibs.srcDirs=['libs']
             renderscript.srcDirs=['src']
-            aidl.srcDirs=['src']
+//            aidl.srcDirs=['src']
             manifest.srcFile'src/main/AndroidManifest.xml'
         }
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.0.1'
-
-    compile 'com.jakewharton:butterknife:8.2.1'
+    compile commonDependencies.supportAppcompat
+    compile commonDependencies.butterKnife
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
 }

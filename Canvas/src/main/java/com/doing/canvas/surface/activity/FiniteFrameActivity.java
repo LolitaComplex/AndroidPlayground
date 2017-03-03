@@ -1,4 +1,4 @@
-package main.java.com.doing.canvas.surface.activity;
+package com.doing.canvas.surface.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import com.doing.canvas.R;
+import com.doing.canvas.surface.player.FiniteFramePlayer;
+import com.doing.canvas.surface.player.FramePlayer;
 
-import main.java.com.doing.canvas.surface.player.FiniteFramePlayer;
-import main.java.com.doing.canvas.surface.player.FramePlayer;
 
 /**
  * Class description here
@@ -31,6 +31,7 @@ public abstract class FiniteFrameActivity extends AppCompatActivity
     protected EditText mEtFrame;
     protected SurfaceView mSurfaceView;
     protected FiniteFramePlayer mPlayer;
+    private View mView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public abstract class FiniteFrameActivity extends AppCompatActivity
         ((ToggleButton) findViewById(R.id.FinityFrameActivity_toggle_play)).setOnCheckedChangeListener(this);
         ((ToggleButton) findViewById(R.id.FinityFrameActivity_toggle_loop)).setOnCheckedChangeListener(this);
         ((ToggleButton) findViewById(R.id.FinityFrameActivity_toggle_visible)).setOnCheckedChangeListener(this);
+
+        mView = findViewById(R.id.FinityFrameActivity_visible);
 
         mEtFrame = ((EditText) findViewById(R.id.FinityFrameActivity_ed_frame));
         mSurfaceView = ((SurfaceView) findViewById(R.id.FinityFrameActivity_surface));
@@ -85,6 +88,9 @@ public abstract class FiniteFrameActivity extends AppCompatActivity
                 break;
             case R.id.FinityFrameActivity_toggle_loop:
                 mPlayer.setLoopback(isChecked);
+                break;
+            case R.id.FinityFrameActivity_toggle_visible:
+                mView.setVisibility(isChecked ? View.VISIBLE : View.GONE);
                 break;
         }
     }

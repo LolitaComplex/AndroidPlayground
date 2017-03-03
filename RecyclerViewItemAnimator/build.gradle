@@ -21,10 +21,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.0'
-
-    compile 'com.jakewharton:butterknife:8.2.1'
+    compile commonDependencies.supportAppcompat
+    compile commonDependencies.butterKnife
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
 
 }

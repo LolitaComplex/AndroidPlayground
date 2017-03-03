@@ -1,16 +1,14 @@
-package main.java.com.doing.canvas;
+package com.doing.canvas;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.doing.canvas.R;
+import com.doing.canvas.activity.PixelColorCanvasActivity;
+import com.doing.canvas.activity.TableCanvasActivity;
+import com.doing.canvas.surface.activity.SurfaceActivity;
 
 import butterknife.ButterKnife;
-import main.java.com.doing.canvas.activity.PixelColorCanvasActivity;
-import main.java.com.doing.canvas.activity.TableCanvasActivity;
-import main.java.com.doing.canvas.surface.activity.SurfaceActivity;
-
 
 public class CanvasActivity extends AppCompatActivity {
 

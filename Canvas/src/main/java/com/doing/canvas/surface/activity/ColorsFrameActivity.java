@@ -1,15 +1,15 @@
-package main.java.com.doing.canvas.surface.activity;
+package com.doing.canvas.surface.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 
+import com.doing.canvas.surface.base.Executor;
+import com.doing.canvas.surface.executor.HandlerExecutor;
+import com.doing.canvas.surface.player.FiniteFramePlayer;
+import com.doing.canvas.surface.renderer.ColorRenderer;
+import com.doing.canvas.surface.renderer.FiniteFrameRenderer;
 
-import main.java.com.doing.canvas.surface.base.Executor;
-import main.java.com.doing.canvas.surface.executor.HandlerExecutor;
-import main.java.com.doing.canvas.surface.player.FiniteFramePlayer;
-import main.java.com.doing.canvas.surface.renderer.ColorRenderer;
-import main.java.com.doing.canvas.surface.renderer.FiniteFrameRenderer;
 
 /**
  * Class description here

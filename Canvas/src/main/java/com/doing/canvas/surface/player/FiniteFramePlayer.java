@@ -1,11 +1,12 @@
-package main.java.com.doing.canvas.surface.player;
+package com.doing.canvas.surface.player;
 
 import android.view.SurfaceHolder;
 
-import main.java.com.doing.canvas.surface.base.Executor;
-import main.java.com.doing.canvas.surface.base.Frame;
-import main.java.com.doing.canvas.surface.base.Renderer;
-import main.java.com.doing.canvas.surface.frame.FiniteFrameGenerator;
+import com.doing.canvas.surface.base.Executor;
+import com.doing.canvas.surface.base.Frame;
+import com.doing.canvas.surface.base.Renderer;
+import com.doing.canvas.surface.frame.FiniteFrameGenerator;
+
 
 /**
  * Class description here

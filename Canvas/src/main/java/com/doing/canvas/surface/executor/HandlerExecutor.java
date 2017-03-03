@@ -1,8 +1,9 @@
-package main.java.com.doing.canvas.surface.executor;
+package com.doing.canvas.surface.executor;
 
 import android.os.Handler;
 
-import main.java.com.doing.canvas.surface.base.Executor;
+import com.doing.canvas.surface.base.Executor;
+
 
 /**
  * Class description here

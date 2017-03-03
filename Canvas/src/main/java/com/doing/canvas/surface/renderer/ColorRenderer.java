@@ -1,4 +1,4 @@
-package main.java.com.doing.canvas.surface.renderer;
+package com.doing.canvas.surface.renderer;
 
 import android.graphics.Canvas;
 

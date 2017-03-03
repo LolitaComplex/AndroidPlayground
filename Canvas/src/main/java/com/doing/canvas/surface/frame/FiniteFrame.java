@@ -1,6 +1,7 @@
-package main.java.com.doing.canvas.surface.frame;
+package com.doing.canvas.surface.frame;
 
-import main.java.com.doing.canvas.surface.base.Frame;
+
+import com.doing.canvas.surface.base.Frame;
 
 /**
  * Class description here

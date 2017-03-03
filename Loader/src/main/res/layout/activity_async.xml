@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_async"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.doing.loader.ui.AsyncActivity">
+
+    <Button
+        android:id="@+id/AsyncActivity_btn_start"
+        android:text="开始执行Loader"
+        style="@style/ButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/AsyncActivity_btn_cancel"
+        android:text="取消任务"
+        style="@style/ButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/AsyncActivity_btn_cancelInBackground"
+        android:text="取消后台任务"
+        style="@style/ButtonStyle"
+        />
+</LinearLayout>

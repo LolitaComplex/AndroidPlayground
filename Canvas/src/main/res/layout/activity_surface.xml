@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     android:id="@+id/activity_surface"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context="main.java.com.doing.canvas.surface.activity.SurfaceActivity">
+    android:orientation="vertical"
+    >
 
 
     <Button
@@ -15,4 +15,10 @@
         android:text="ColorsFrame"
         />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/CanvasActivity_alpha_frames"
+        style="@style/ButtonStyle"
+        android:text="AlphaFrame"
+    />
+
+</LinearLayout>
