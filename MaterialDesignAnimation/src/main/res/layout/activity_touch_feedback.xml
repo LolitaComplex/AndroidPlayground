@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_touch_feedback"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:text="Default"
+        style="@style/ButtonStyle"
+        />
+
+    <Button
+        android:text="有界限的波纹"
+        style="@style/ButtonStyle"
+        android:background="?android:attr/selectableItemBackground"
+        />
+
+    <Button
+        android:text="延伸到View之外的波纹"
+        style="@style/ButtonStyle"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        />
+
+    <Button
+        android:text="自定义波纹"
+        style="@style/ButtonStyle"
+        android:background="@drawable/click_ripple"
+        />
+
+    <Button
+        android:text="取消波纹"
+        style="@style/ButtonStyle"
+        android:background="@null"
+        />
+
+</LinearLayout>

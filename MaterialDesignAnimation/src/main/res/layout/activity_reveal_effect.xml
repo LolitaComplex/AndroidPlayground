@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    android:id="@+id/activity_reveal_effect"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="70dp"
+    android:paddingTop="130dp"
+    android:columnCount="2"
+    tools:context="com.doing.material.ui.RevealEffectActivity">
+
+    <View
+        android:id="@+id/box1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/red"
+        android:layout_margin="10dp"
+        />
+
+    <View
+        android:id="@+id/box2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/green"
+        android:layout_margin="10dp"
+        />
+
+    <View
+        android:id="@+id/box3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/blue"
+        android:layout_margin="10dp"
+        />
+
+    <View
+        android:id="@+id/box4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/yellow"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/btn_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入"
+        />
+
+    <Button
+        android:id="@+id/btn_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消失"
+        />
+
+</GridLayout>

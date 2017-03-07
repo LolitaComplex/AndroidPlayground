@@ -62,9 +62,17 @@ public class AidlService extends Service {
         return mBinder;
     }
 
+
+    @Override
+    public void onStart(Intent intent, int startId) {
+        super.onStart(intent, startId);
+        Log.d(TAG, "onStart: " + "服务开始了");
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG, "onCreate: " + "服务被创建了");
 
     }
 }

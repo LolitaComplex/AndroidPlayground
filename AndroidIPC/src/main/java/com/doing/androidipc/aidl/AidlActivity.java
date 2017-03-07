@@ -32,6 +32,7 @@ public class AidlActivity extends AppCompatActivity {
 
         mServiceIntent = new Intent(this, AidlService.class);
         startService(mServiceIntent);
+        Log.d(TAG, "onCreate: " + "开启服务");
         mAidlConnection = new AidlConnection();
         bindService(mServiceIntent, mAidlConnection, BIND_AUTO_CREATE);
     }
