@@ -19,6 +19,16 @@
         </activity>
         <activity android:name=".ui.RevealEffectActivity">
         </activity>
+        <activity android:name=".ui.CurvedMotionActivity">
+        </activity>
+        <activity android:name=".ui.ViewStateChangeActivity">
+        </activity>
+        <activity android:name=".ui.AnimateViewActivity">
+        </activity>
+        <activity android:name=".ui.TransitionActivity">
+        </activity>
+        <activity android:name=".ui.TargetTransitionActivity">
+        </activity>
     </application>
 
 </manifest>

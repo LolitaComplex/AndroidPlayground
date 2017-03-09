@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/TransitionActivity_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:transitionName="appbar"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/TransitionActivity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#455A64"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title=" "
+            />
+        <!-- layout_scrollFlags值可以为三个，并且组合效果不同，需要记一下 -->
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/activity_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:transitionName="fabButton"
+        android:layout_gravity="right|top"
+        app:backgroundTint="#30469b"
+        android:layout_marginTop="130dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="12dp"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:paddingTop="50dp"
+            >
+
+            <TextView
+                android:id="@+id/box1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="70dp"
+                android:background="@color/red"
+                android:gravity="center"
+                android:onClick="onBox1Click"
+                android:text="Exit TransitionSet"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/box2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/green"
+                android:gravity="center"
+                android:onClick="onBox2Click"
+                android:padding="10dp"
+                android:text="Exit Slide Right"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/box3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="70dp"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:onClick="onBox3Click"
+                android:text="Reenter Fade In"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/box4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:onClick="onBox4Click"
+                android:text="Reenter Explore"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/box5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginLeft="70dp"
+                android:background="#7456EC"
+                android:gravity="center"
+                android:onClick="onBox5Click"
+                android:text="Reenter Slide Left"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/box6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="#EF521F"
+                android:gravity="center"
+                android:onClick="onBox6Click"
+                android:text="下一页\n"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+        </GridLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

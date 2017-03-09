@@ -78,8 +78,6 @@ public class RevealEffectActivity extends AppCompatActivity {
                 initRevealEffect(rootView, Color.parseColor("#FFFF00"), true);
             }
         });
-
-        ObjectAnimator.ofFloat(rootView, View.X, View.Y, new Path());
     }
 
     private void effectBox(boolean visible, View... views) {

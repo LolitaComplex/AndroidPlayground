@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pressed"
+        android:drawable="@mipmap/anim_state_drawable14"
+        android:state_pressed="true"/>
+
+    <item
+        android:id="@+id/focus"
+        android:drawable="@mipmap/anim_state_drawable11"
+        android:state_focused="true"/>
+
+    <item
+        android:id="@+id/normal"
+        android:drawable="@mipmap/anim_state_drawable00"/>
+
+    <transition
+        android:reversible="true"
+        android:fromId="@id/normal"
+        android:toId="@id/pressed">
+        <animation-list>
+            <item
+                android:drawable="@mipmap/anim_state_drawable00"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable01"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable02"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable03"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable04"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable05"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable06"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable07"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable08"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable09"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable10"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable11"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable12"
+                android:duration="30"/>
+            <item
+                android:drawable="@mipmap/anim_state_drawable14"
+                android:duration="30"/>
+        </animation-list>
+    </transition>
+</animated-selector>

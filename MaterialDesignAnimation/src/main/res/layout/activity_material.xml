@@ -17,7 +17,31 @@
     <Button
         android:id="@+id/MaterialActivity_btn_revealeffect"
         style="@style/ButtonStyle"
-        android:text="TouchFeedback"
+        android:text="RevealEffect"
+        />
+
+    <Button
+        android:id="@+id/MaterialActivity_btn_curvedmotion"
+        style="@style/ButtonStyle"
+        android:text="CurvedMotion"
+        />
+
+    <Button
+        android:id="@+id/MaterialActivity_btn_viewstatechange"
+        style="@style/ButtonStyle"
+        android:text="ViewStateChange"
+        />
+
+    <Button
+        android:id="@+id/MaterialActivity_btn_animateview"
+        style="@style/ButtonStyle"
+        android:text="AnimateView"
+        />
+
+    <Button
+        android:id="@+id/MaterialActivity_btn_transition"
+        style="@style/ButtonStyle"
+        android:text="Transitions"
         />
 
 </LinearLayout>
