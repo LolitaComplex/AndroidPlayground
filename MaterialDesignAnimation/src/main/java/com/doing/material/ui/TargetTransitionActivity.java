@@ -2,6 +2,7 @@ package com.doing.material.ui;
 
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

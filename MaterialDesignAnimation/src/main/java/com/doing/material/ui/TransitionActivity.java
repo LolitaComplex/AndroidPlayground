@@ -4,10 +4,10 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.transition.Explode;
 import android.transition.Fade;
@@ -39,14 +39,13 @@ public class TransitionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //方式1，如果手机是5.0以上手机，其实默认Transition就是启动的
 //            getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
 //            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         }
 
-        mAppBar = (AppBarLayout)  findViewById(R.id.TransitionActivity_appbar);
+        mAppBar = (AppBarLayout) findViewById(R.id.TransitionActivity_appbar);
         mFab = (FloatingActionButton) findViewById(R.id.activity_fab);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +58,8 @@ public class TransitionActivity extends AppCompatActivity {
                             TargetTransitionActivity.class);
                     ActivityOptions activityOptions = ActivityOptions
                             .makeSceneTransitionAnimation(TransitionActivity.this,
-                                    Pair.create((View)mFab, "fabButton"),
-                                    Pair.create((View)mAppBar,"appbar"));
+                                    Pair.create((View) mFab, "fabButton"),
+                                    Pair.create((View) mAppBar, "appbar"));
                     startActivity(intent, activityOptions.toBundle());
                 }
             }
@@ -108,6 +107,7 @@ public class TransitionActivity extends AppCompatActivity {
             setTransition(new Explode());
         }
     }
+
     public void onBox5Click(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             setTransition(new Slide(Gravity.LEFT));
@@ -126,7 +126,5 @@ public class TransitionActivity extends AppCompatActivity {
             transition.excludeTarget(R.id.TransitionActivity_toolbar, true);
             getWindow().setReenterTransition(transition);
         }
-
     }
-
 }
