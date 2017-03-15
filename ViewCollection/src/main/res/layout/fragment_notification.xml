@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认通知(已被抛弃，但是通用)"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btn_api11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认通知(API 11后用用)"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btn_api16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="默认通知(API 16后通用)"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btn_user_defined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义通知"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="notificationMethod"
+        android:text="清除通知"
+        android:textSize="20sp"
+        />
+
+</LinearLayout>

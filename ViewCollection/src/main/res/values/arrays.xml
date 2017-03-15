@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spin_data">
+        <item>幸福涂鸦</item>
+        <item>犬勇者物语</item>
+        <item>死亡游行</item>
+        <item>铳皇无尽的法夫纳</item>
+    </string-array>
+</resources>

@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.doing.architectureencapsulation"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile commonDependencies.supportAppcompat
+    compile commonDependencies.butterKnife
+    compile commonDependencies.okhttp
+    apt commonDependencies.butterKnifeApt
+    compile commonDependencies.picasso
+    compile commonDependencies.glide
+    compile commonDependencies.glideOkHttp
+    compile commonDependencies.imageloader
+    compile commonDependencies.fresco
+    compile commonDependencies.rxjava
+    compile commonDependencies.rxandroid
+    compile commonDependencies.rxbinding
+    compile files('libs/MiPush_SDK_Client_3_2_2.jar')
+}

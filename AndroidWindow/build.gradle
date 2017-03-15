@@ -25,5 +25,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile commonDependencies.supportAppcompat
     compile commonDependencies.butterKnife
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    apt commonDependencies.butterKnifeApt
 }

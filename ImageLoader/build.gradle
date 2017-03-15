@@ -30,6 +30,6 @@ dependencies {
     compile commonDependencies.supportCardView
     compile commonDependencies.supportRecyclerView
     compile commonDependencies.butterKnife
+    apt commonDependencies.butterKnifeApt
     compile commonDependencies.okhttp
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
 }

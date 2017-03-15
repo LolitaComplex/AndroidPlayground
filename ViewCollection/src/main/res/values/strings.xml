@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ViewCollection</string>
+    <string name="add_button">AddButton</string>
+    <string name="appearing">APPEARING</string>
+    <string name="change_appearing">CHANGE_APPEARING</string>
+    <string name="disappearing">DISAPPEARING</string>
+    <string name="change_disappearing">CHANGE_DISAPPEARING</string>
+    <string name="open_drawer">打开</string>
+    <string name="close_drawer">关闭</string>
+</resources>

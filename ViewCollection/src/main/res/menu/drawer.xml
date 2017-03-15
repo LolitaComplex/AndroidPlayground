@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_home"
+            android:checked="true"
+            android:icon="@drawable/drawer_home"
+            android:title="主页"/>
+
+        <item
+            android:id="@+id/drawer_cart"
+            android:checked="true"
+            android:icon="@drawable/drawer_cart"
+            android:title="购物车"/>
+
+        <item
+            android:id="@+id/drawer_setting"
+            android:checked="true"
+            android:icon="@drawable/drawer_setting"
+            android:title="设置"/>
+    </group>
+
+    <item android:title="次级菜单">
+        <menu>
+            <item
+                android:id="@+id/drawer_collection"
+                android:icon="@drawable/drawer_collection"
+                android:title="收藏"
+                />
+
+            <item
+                android:id="@+id/drawer_friend"
+                android:icon="@drawable/drawer_friend"
+                android:title="好友"
+                />
+
+            <item
+                android:id="@+id/drawer_picture"
+                android:icon="@drawable/drawer_picture"
+                app:actionLayout="@layout/action_layout"
+                android:title="相册"
+                />
+        </menu>
+
+    </item>
+</menu>

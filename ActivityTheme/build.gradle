@@ -25,8 +25,8 @@ android {
 }
 
 dependencies {
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
     compile commonDependencies.supportAppcompat
     compile commonDependencies.butterKnife
+    apt commonDependencies.butterKnifeApt
     compile commonDependencies.supportDesign
 }

@@ -1,0 +1,80 @@
+apply plugin: $/com.android.application/$
+apply plugin: 'android-apt'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+android {
+
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.dong.viewcollection"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            // 设置支持的 SO 库构架
+            abiFilters 'armeabi'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//应用 Bugtags 插件
+apply plugin: 'com.bugtags.library.plugin'
+
+//Bugtags 插件配置
+bugtags {
+    //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考插件详细使用说明
+    appKey "957f8edaac23acd626b82239f7a64d4b"  //这里是你的 appKey
+    appSecret "APP_SECRET"    //这里是你的 appSecret，管理员在设置页可以查看
+    mappingUploadEnabled true
+
+    //网络跟踪功能配置(企业版)
+    trackingNetworkEnabled true
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //    compile ('com.android.support:support-v4:24.1.1'){
+    //        force = true;
+    //    }
+    compile commonDependencies.supportAppcompat
+    compile commonDependencies.butterKnife
+    apt commonDependencies.butterKnifeApt
+    compile commonDependencies.supportDesign
+    compile commonDependencies.supportCardView
+    compile commonDependencies.supportRecyclerView
+    compile commonDependencies.okhttp
+    compile commonDependencies.rxjava
+    compile commonDependencies.rxandroid
+    compile commonDependencies.retrofit
+    compile commonDependencies.retrofitGson
+
+    compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    compile 'com.github.tianzhijiexian:logger:v11'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    //butterknife
+    compile 'com.zhy:base-rvadapter:3.0.3'
+}

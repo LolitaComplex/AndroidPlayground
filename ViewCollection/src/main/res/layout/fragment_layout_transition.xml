@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/container"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_button"
+        android:textAllCaps="false"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_appearing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appearing"
+        android:checked="true"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_change_appearing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_appearing"
+        android:checked="true"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_disappearing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disappearing"
+        android:checked="true"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_change_disappearing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_disappearing"
+        android:checked="true"
+        />
+
+</LinearLayout>

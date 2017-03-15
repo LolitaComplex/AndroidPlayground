@@ -27,10 +27,27 @@ ext {
         supportDesign    : "com.android.support:design:${supportLibrary}",
         supportRecyclerView    : "com.android.support:recyclerview-v7:${supportLibrary}",
         supportCardView  : "com.android.support:cardview-v7:${supportLibrary}",
+
         butterKnife      : "com.jakewharton:butterknife:8.2.1",
-        okhttp      : "com.squareup.okhttp3:okhttp:3.5.0",
-        rxjava      : "io.reactivex:rxjava:1.2.3",
-        rxandroid : "io.reactivex:rxandroid:1.2.1"
+        butterKnifeApt   : "com.jakewharton:butterknife-compiler:8.2.1",
+        okhttp          : "com.squareup.okhttp3:okhttp:3.6.0",
+        rxjava          : "io.reactivex:rxjava:1.2.1",
+        rxandroid       : "io.reactivex:rxandroid:1.2.1",
+        rxbinding       : "com.jakewharton.rxbinding:rxbinding:1.0.0",
+        retrofit        : "com.squareup.retrofit2:retrofit:2.2.0",
+        retrofitGson    : "com.squareup.retrofit2:converter-gson:2.2.0",
+        retrofitScalars : "com.squareup.retrofit2:converter-scalars:2.2.0",
+        retrofitRx      : "com.squareup.retrofit2:adapter-rxjava:2.2.0",
+        rxlifecycle     : "com.trello:rxlifecycle:1.0",
+        rxlifecycleComponents     : "com.trello:rxlifecycle-components:1.0",
+
+        picasso     : "com.squareup.picasso:picasso:2.5.2",
+        glide       : "com.github.bumptech.glide:glide:3.7.0",
+        glideOkHttp : "com.github.bumptech.glide:okhttp3-integration:1.4.0@aar",
+        imageloader : files('libs/universal-image-loader-1.9.5.jar'),
+        fresco      : "com.facebook.fresco:fresco:1.1.0",
+
+        xiaoMiPush      : files('libs/MiPush_SDK_Client_3_2_2.jar')
     ]
 }
 

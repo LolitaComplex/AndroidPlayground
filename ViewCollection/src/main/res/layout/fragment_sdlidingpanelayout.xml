@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.CoordinatorLayout-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!-->-->
+
+<!--<android.support.design.widget.AppBarLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--<android.support.design.widget.CollapsingToolbarLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--app:title="SlidingPaneLayout"-->
+<!--app:expandedTitleMarginStart="40dp"-->
+<!--app:contentScrim="?attr/colorPrimary"-->
+<!-->-->
+
+<!--<ImageView-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="300dp"-->
+<!--android:scaleType="centerCrop"-->
+<!--android:src="@mipmap/notification_title"-->
+<!--app:layout_collapseMode="parallax"-->
+<!--/>-->
+
+
+<!--<android.support.v7.widget.Toolbar-->
+<!--android:id="@+id/SlidingFragment_toolbar"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="?attr/actionBarSize"-->
+<!--app:layout_collapseMode="pin"-->
+<!--/>-->
+
+
+<!--</android.support.design.widget.CollapsingToolbarLayout>-->
+<!--</android.support.design.widget.AppBarLayout>-->
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/SlidingFragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="SliingPaneLayout"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.SlidingPaneLayout
+        android:id="@+id/SlidingFragment_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        >
+
+        <fragment
+            android:name="com.dong.view.SlidingMenuFragment"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/SlidingFragment_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#000000"
+            android:dividerHeight="3dp"
+            />
+
+    </android.support.v4.widget.SlidingPaneLayout>
+</LinearLayout>
+
+
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+
