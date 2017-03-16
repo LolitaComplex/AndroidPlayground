@@ -23,4 +23,16 @@
         style="@style/ButtonStyle"
         android:text="Disable AlarmManager"
         />
+
+    <Button
+        android:id="@+id/AliveActivity_btn_alarm_alive"
+        style="@style/ButtonStyle"
+        android:text="Alive AlarmManager"
+        />
+
+    <Button
+        android:id="@+id/AliveActivity_btn_alarm_job"
+        style="@style/ButtonStyle"
+        android:text="Job Scheduler"
+        />
 </LinearLayout>

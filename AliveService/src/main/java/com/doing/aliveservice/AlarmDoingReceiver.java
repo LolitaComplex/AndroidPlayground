@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 
@@ -26,8 +27,9 @@ public class AlarmDoingReceiver extends BroadcastReceiver {
         intent.setAction("AlarmDoingReceiver");
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        manager.set(AlarmManager.ELAPSED_REALTIME, 3000, pendingIntent);
-//        manager.setExact(AlarmManager.ELAPSED_REALTIME, 3000, pendingIntent);
+//        manager.set(AlarmManager.ELAPSED_REALTIME, 1000, pendingIntent);
+//        manager.setExact(AlarmManager.ELAPSED_REALTIME, 1000, pendingIntent);
+        manager.setWindow(AlarmManager.RTC_WAKEUP, SystemClock.currentThreadTimeMillis(), 100, pendingIntent);
         Log.w(TAG, "start: AlarmManager start");
     }
 
@@ -36,6 +38,13 @@ public class AlarmDoingReceiver extends BroadcastReceiver {
         PackageManager manager = context.getPackageManager();
         manager.setComponentEnabledSetting(receiver, PackageManager.COMPONENT_ENABLED_STATE_DISABLED
                 , PackageManager.DONT_KILL_APP);
+    }
+
+    public static void alive(Context context) {
+        ComponentName receiver = new ComponentName(context, AlarmDoingReceiver.class);
+        PackageManager manager = context.getPackageManager();
+        manager.setComponentEnabledSetting(receiver, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP);
     }
 
     @Override
