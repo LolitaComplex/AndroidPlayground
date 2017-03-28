@@ -36,5 +36,7 @@ dependencies {
     compile commonDependencies.rxjava
     compile commonDependencies.rxandroid
     compile commonDependencies.rxbinding
+
+    compile commonDependencies.gson
     compile files('libs/MiPush_SDK_Client_3_2_2.jar')
 }
