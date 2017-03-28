@@ -2,6 +2,8 @@ package com.doing.canvas;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 
 import com.doing.canvas.activity.PixelColorCanvasActivity;
@@ -24,7 +26,6 @@ public class CanvasActivity extends AppCompatActivity {
                         TableCanvasActivity.start(CanvasActivity.this);
                     }
                 });
-
         ButterKnife.findById(this, R.id.CanvasActivity_color)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -33,7 +34,6 @@ public class CanvasActivity extends AppCompatActivity {
                                 CanvasActivity.this);
                     }
                 });
-
         ButterKnife.findById(this, R.id.CanvasActivity_surface)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -41,6 +41,7 @@ public class CanvasActivity extends AppCompatActivity {
                         SurfaceActivity.start(CanvasActivity.this);
                     }
                 });
+
     }
 
 }

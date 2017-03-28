@@ -17,4 +17,14 @@
         android:layout_height="wrap_content"
         android:text="PopupWindow"
         android:layout_centerInParent="true"/>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_pop"
+        >
+
+
+    </FrameLayout>
 </RelativeLayout>

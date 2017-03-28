@@ -36,7 +36,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func2;
 
-public class ImageActivity extends Activity implements View.OnClickListener {
+public class    ImageActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "ImageActivity";
 

@@ -15,6 +15,7 @@ import android.os.SystemClock;
 import android.support.annotation.AnimatorRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.AtomicFile;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.doing.testmoudle.ui.TestFragment;
 import com.doing.testmoudle.utils.LogUtil;
 
 import java.io.File;
@@ -94,66 +96,68 @@ public class TestActivity extends AppCompatActivity {
 //        LogUtil.d(TAG, "currentThreadTimeMillis : " + SystemClock.currentThreadTimeMillis());
 
         //判断隐式意图是否匹配成功的API
-        PackageManager packageManager = getPackageManager();
-//        assert packageManager.resolveActivity(new Intent(),
-//                PackageManager.MATCH_DEFAULT_ONLY) != null;
+//        PackageManager packageManager = getPackageManager();
+////        assert packageManager.resolveActivity(new Intent(),
+////                PackageManager.MATCH_DEFAULT_ONLY) != null;
+//
+////        assert new Intent().resolveActivity(getPackageManager())
+////                != null;
+//
+//        CopyOnWriteArrayList<String> keyWord = new CopyOnWriteArrayList<>(new String[30]);
+//        keyWord.add("");
+//        ArrayList<String> list = new ArrayList<>();
+//
+//        final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+//        boolean result = atomicBoolean.compareAndSet(true, false);
+//
+//        View view = findViewById(R.id.activity_test);
+////        view.getLeft();
+////        view.getX();
+////        view.getTranslationX();
+//
+////        ObjectAnimator.ofInt(new ViewWrapper(view), "marginLeft", 1000).setDuration(20000).start();
+//        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+//        TextView textView = new TextView(this);
+//
+//
+////        getWindow().setAttributes();
+//
+//        final String[] buf = {"芙兰朵露","蕾米莉亚","十六夜咲夜","帕秋莉"};
+//        final ListView listView = new ListView(this);
+//        listView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT
+//            , ViewGroup.LayoutParams.WRAP_CONTENT));
+//        TextView inflate = (TextView) LayoutInflater.from(TestActivity.this)
+//                .inflate(android.R.layout.simple_list_item_1, null);
+//        inflate.setText(buf[2]);
+//        inflate.measure(0, 0);
+//
+//        final int measuredWidth = inflate.getMeasuredWidth();
+//        listView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,buf));
+//        final Button button = (Button) findViewById(R.id.btn_pop);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                PopupWindow popupWindow = new PopupWindow(listView,
+//                        measuredWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
+//
+//                popupWindow.setFocusable(true);
+//                popupWindow.setOutsideTouchable(true);
+//                popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext()
+//                        ,R.drawable.menu_bg));
+//                WindowManager.LayoutParams attributes = getWindow().getAttributes();
+////                attributes.alpha = .5f;
+//                getWindow().setAttributes(attributes);
+//                int[] location = new int[2];
+//                button.getLocationOnScreen(location);
+////                popupWindow.showAtLocation(button, Gravity.NO_GRAVITY,
+////                        location[0], location[1] + button.getHeight());
+//                popupWindow.showAsDropDown(button);
+//
+//                handler.sendEmptyMessageDelayed(0, 5000);
+//            }
+//        });
 
-//        assert new Intent().resolveActivity(getPackageManager())
-//                != null;
-
-        CopyOnWriteArrayList<String> keyWord = new CopyOnWriteArrayList<>(new String[30]);
-        keyWord.add("");
-        ArrayList<String> list = new ArrayList<>();
-
-        final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-        boolean result = atomicBoolean.compareAndSet(true, false);
-
-        View view = findViewById(R.id.activity_test);
-//        view.getLeft();
-//        view.getX();
-//        view.getTranslationX();
-
-//        ObjectAnimator.ofInt(new ViewWrapper(view), "marginLeft", 1000).setDuration(20000).start();
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-        TextView textView = new TextView(this);
-
-
-//        getWindow().setAttributes();
-
-        final String[] buf = {"芙兰朵露","蕾米莉亚","十六夜咲夜","帕秋莉"};
-        final ListView listView = new ListView(this);
-        listView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT
-            , ViewGroup.LayoutParams.WRAP_CONTENT));
-        TextView inflate = (TextView) LayoutInflater.from(TestActivity.this)
-                .inflate(android.R.layout.simple_list_item_1, null);
-        inflate.setText(buf[2]);
-        inflate.measure(0, 0);
-
-        final int measuredWidth = inflate.getMeasuredWidth();
-        listView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,buf));
-        final Button button = (Button) findViewById(R.id.btn_pop);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupWindow popupWindow = new PopupWindow(listView,
-                        measuredWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-                popupWindow.setFocusable(true);
-                popupWindow.setOutsideTouchable(true);
-                popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext()
-                        ,R.drawable.menu_bg));
-                WindowManager.LayoutParams attributes = getWindow().getAttributes();
-//                attributes.alpha = .5f;
-                getWindow().setAttributes(attributes);
-                int[] location = new int[2];
-                button.getLocationOnScreen(location);
-//                popupWindow.showAtLocation(button, Gravity.NO_GRAVITY,
-//                        location[0], location[1] + button.getHeight());
-                popupWindow.showAsDropDown(button);
-
-                handler.sendEmptyMessageDelayed(0, 5000);
-            }
-        });
+        getFragmentManager().beginTransaction().replace(R.id.container, new TestFragment(), "Test").commit();
 
     }
 
