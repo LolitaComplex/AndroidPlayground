@@ -47,7 +47,7 @@ ext {
         imageloader : files('libs/universal-image-loader-1.9.5.jar'),
         fresco      : "com.facebook.fresco:fresco:1.1.0",
 
-        xiaoMiPush      : files('libs/MiPush_SDK_Client_3_2_2.jar')
+        xiaoMiPush  : files('libs/MiPush_SDK_Client_3_2_2.jar')
     ]
 }
 

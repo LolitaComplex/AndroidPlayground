@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -50,5 +51,20 @@ public class AlarmDoingReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.d(TAG, "onReceive: " + intent.getAction());
+
+
+    }
+
+    private void testWakeLock(Context context) {
+        PowerManager manager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = manager.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP, TAG);
+
+        try {
+            wakeLock.acquire();
+
+            //做一些耗时事情
+        } finally {
+            wakeLock.release();
+        }
     }
 }

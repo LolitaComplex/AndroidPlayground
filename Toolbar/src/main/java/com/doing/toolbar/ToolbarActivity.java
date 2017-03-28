@@ -1,19 +1,36 @@
 package com.doing.toolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.MenuCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.SortedList;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.util.SortedListAdapterCallback;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.LinkedList;
+import java.util.SortedSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+import static android.R.id.list;
+
 public class ToolbarActivity extends AppCompatActivity {
+
+    private static final String TAG = "ToolbarActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
