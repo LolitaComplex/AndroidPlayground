@@ -31,6 +31,8 @@
 
         <activity android:name=".net.test.OkHttpTestActivity">
         </activity>
+        <activity android:name=".listadapter.RecyclerActivity">
+        </activity>
     </application>
 
 </manifest>

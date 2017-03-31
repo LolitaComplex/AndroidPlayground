@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.doing.architectureencapsulation.image.ImageActivity;
+import com.doing.architectureencapsulation.listadapter.RecyclerActivity;
 import com.doing.architectureencapsulation.net.test.OkHttpTestActivity;
 
 import java.util.HashMap;
@@ -45,6 +46,15 @@ public class ArchitectureActivity extends AppCompatActivity {
 //                    OkHttpTestActivity.start(ArchitectureActivity.this);
                 }
             }
+        );
+
+        findViewById(R.id.activity_btn_recycler).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RecyclerActivity.start(ArchitectureActivity.this);
+                    }
+                }
         );
 
 

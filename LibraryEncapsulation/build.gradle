@@ -25,6 +25,9 @@ android {
 
 dependencies {
     compile commonDependencies.supportAppcompat
+    compile commonDependencies.supportRecyclerView
+    compile commonDependencies.supportV4
+
     compile commonDependencies.butterKnife
     compile commonDependencies.okhttp
     apt commonDependencies.butterKnifeApt

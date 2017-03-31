@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="logger-v11">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ViewCollection/build/intermediates/exploded-aar/com.github.tianzhijiexian/logger/v11/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/ViewCollection/build/intermediates/exploded-aar/com.github.tianzhijiexian/logger/v11/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tianzhijiexian/logger/v11/872f27dd4804e68bc39de19dc203fa8c44c5f752/logger-v11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

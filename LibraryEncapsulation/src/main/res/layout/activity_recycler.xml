@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_recycler"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doing.architectureencapsulation.listadapter.RecyclerActivity">
+
+    <com.doing.architectureencapsulation.listadapter.recycler.RefreshView
+        android:id="@+id/RecyclerActivity_refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <com.doing.architectureencapsulation.listadapter.recycler.MyRecyclerView
+        android:id="@+id/RecyclerActivity_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    </com.doing.architectureencapsulation.listadapter.recycler.RefreshView>
+</RelativeLayout>

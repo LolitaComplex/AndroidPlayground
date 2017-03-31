@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="bugtags-lib-2.2.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ViewCollection/build/intermediates/exploded-aar/com.bugtags.library/bugtags-lib/2.2.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/ViewCollection/build/intermediates/exploded-aar/com.bugtags.library/bugtags-lib/2.2.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bugtags.library/bugtags-lib/2.2.2/18053568454c44189ea643bfa3c89f3f4012c9fd/bugtags-lib-2.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -23,4 +23,10 @@
         style="@style/ButtonStyle"
         android:text="OkHttpTest"
         />
+
+    <Button
+        android:id="@+id/activity_btn_recycler"
+        style="@style/ButtonStyle"
+        android:text="RecyclerTest"
+        />
 </LinearLayout>
