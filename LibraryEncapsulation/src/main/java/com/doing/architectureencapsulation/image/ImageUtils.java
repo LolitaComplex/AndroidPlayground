@@ -1,6 +1,7 @@
 package com.doing.architectureencapsulation.image;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.widget.ImageView;
@@ -113,6 +114,7 @@ public class ImageUtils {
         if (transformation != null) {
             builder.bitmapTransform(transformation);
         }
+
 
         builder.into(imageView);
     }

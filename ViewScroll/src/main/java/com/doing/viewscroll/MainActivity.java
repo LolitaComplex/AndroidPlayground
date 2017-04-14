@@ -23,8 +23,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static rx.schedulers.Schedulers.start;
@@ -87,13 +90,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.MainActivity_iv1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ObjectAnimator.ofFloat(v, "translationY", 100).start();
-            }
-        });
-        findViewById(R.id.MainActivity_iv1).offsetTopAndBottom(100);
+
+
+
+//        findViewById(R.id.MainActivity_iv1).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ObjectAnimator.ofFloat(v, "translationY", 100).start();
+//            }
+//        });
+//        findViewById(R.id.MainActivity_iv1).offsetTopAndBottom(100);
     }
 
     private class ViewWrapwer {

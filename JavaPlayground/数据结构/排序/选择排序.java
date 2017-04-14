@@ -24,6 +24,4 @@ class Selection{
             exch(arr, x, min);
         }
     }
-
-    
 }

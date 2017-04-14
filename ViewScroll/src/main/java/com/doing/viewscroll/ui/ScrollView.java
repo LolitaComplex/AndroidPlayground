@@ -18,10 +18,12 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Scroller;
 
 import static android.R.attr.translationX;
 import static android.R.attr.translationY;
+import static android.R.attr.width;
 
 public class ScrollView extends ImageView {
 
@@ -101,11 +103,32 @@ public class ScrollView extends ImageView {
 //                setLayoutParams(layoutParams);
 
                 //移动方式5
-                ViewCompat.setTranslationX(this, translationX);
-                ViewCompat.setTranslationY(this, translationY);
+//                ViewCompat.setTranslationX(this, translationX);
+//                ViewCompat.setTranslationY(this, translationY);
 
 //                ViewCompat.offsetLeftAndRight(this, translationX);
 //                ViewCompat.offsetTopAndBottom(this, translationY);
+                ViewGroup.LayoutParams layoutParams = getLayoutParams();
+                int width = layoutParams.width += translationX * 2;
+                if(width > 1080){
+                    ViewGroup.MarginLayoutParams layoutParamsParent = (ViewGroup.MarginLayoutParams)
+                            ((RelativeLayout) getParent()).getLayoutParams();
+                    layoutParamsParent.leftMargin -= translationX * 2;
+
+                    RelativeLayout parent = (RelativeLayout) getParent();
+                    for(int x = 0; x < parent.getChildCount(); x++){
+                        View childAt = parent.getChildAt(x);
+                        if(! (childAt instanceof ScrollView)){
+                            RelativeLayout.LayoutParams layoutParamsRelative = (RelativeLayout.LayoutParams)
+                                    childAt.getLayoutParams();
+                            layoutParamsRelative.leftMargin += translationX * 2;
+                        }
+                    }
+                }
+                setLayoutParams(layoutParams);
+
+                Log.d(TAG, "onTouchEvent: " + getWidth());
+
                 actionDown = false;
                 break;
 
@@ -120,10 +143,10 @@ public class ScrollView extends ImageView {
         }
 
         ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        Log.v(TAG, "getTranslationX() =" + getTranslationX() + ":::::::getTranslationY()=" + getTranslationY());
-        Log.d(TAG, "getX() =" + getX() + ":::::::getY()=" + getY());
-        Log.w(TAG, "left =" + getLeft() + "\ttop=" + getTop() + "\tright=" + getRight() + "\tbottom=" + getBottom());
-        Log.i(TAG, "scrollX =" + getScrollX() + "\tscrollY=" + getScrollY());
+//        Log.v(TAG, "getTranslationX() =" + getTranslationX() + ":::::::getTranslationY()=" + getTranslationY());
+//        Log.d(TAG, "getX() =" + getX() + ":::::::getY()=" + getY());
+//        Log.w(TAG, "left =" + getLeft() + "\ttop=" + getTop() + "\tright=" + getRight() + "\tbottom=" + getBottom());
+//        Log.i(TAG, "scrollX =" + getScrollX() + "\tscrollY=" + getScrollY());
         startX = moveX;
         startY = moveY;
         boolean touchEvent = super.onTouchEvent(event);

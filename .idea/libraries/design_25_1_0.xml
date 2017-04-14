@@ -2,6 +2,7 @@
   <library name="design-25.1.0">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/ActivityTheme/build/intermediates/exploded-aar/com.android.support/design/25.1.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Architecture/build/intermediates/exploded-aar/com.android.support/design/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/FragmentPagerAdapter/build/intermediates/exploded-aar/com.android.support/design/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/ImageLoader/build/intermediates/exploded-aar/com.android.support/design/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/MaterialDesignAnimation/build/intermediates/exploded-aar/com.android.support/design/25.1.0/annotations.zip!/" />
@@ -14,6 +15,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/design/25.1.0/design-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/design/25.1.0/design-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/design/25.1.0/design-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/design/25.1.0/design-25.1.0-sources.jar!/" />

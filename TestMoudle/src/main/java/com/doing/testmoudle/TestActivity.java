@@ -39,6 +39,7 @@ import android.widget.Toast;
 
 import com.doing.testmoudle.ui.TestFragment;
 import com.doing.testmoudle.utils.LogUtil;
+import com.google.common.base.Preconditions;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -89,6 +90,8 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         findViewById(android.R.id.content);
+
+
         //验证SystemClock的时间准确值
 //        LogUtil.d(TAG, "elapsedRealtime : " + SystemClock.elapsedRealtime());//在AlarmManager中使用
 //        LogUtil.d(TAG, "uptimeMillis : " + SystemClock.uptimeMillis());//在Handler中使用

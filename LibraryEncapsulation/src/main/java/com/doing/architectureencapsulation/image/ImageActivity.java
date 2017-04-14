@@ -120,6 +120,7 @@ public class    ImageActivity extends Activity implements View.OnClickListener {
                     }
                 });
 
+
         Picasso.with(this).load(IMAGE_URL).into(mActivityIvCenter);
     }
 

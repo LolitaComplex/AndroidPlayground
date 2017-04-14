@@ -27,12 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void startAidl(View view) {
         startActivity(new Intent(this, AidlActivity.class));
-//        getResources().getString(R.string.app_name);
-//        getResources().getLayout(R.layout.activity_main);
-//        getResources().getDimension(R.dimen.activity_horizontal_margin);
-//        LayoutInflater.from(this).inflate(R.layout.activity_main, null);
-        TextView textView ;
-//        textView.setEnabled();
     }
 
 

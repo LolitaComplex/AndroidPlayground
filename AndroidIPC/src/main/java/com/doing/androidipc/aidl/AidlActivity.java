@@ -19,6 +19,8 @@ import java.util.List;
 public class AidlActivity extends AppCompatActivity {
 
     private static final String TAG = "AidlActivity";
+    private static int index = 1;
+
 
     private ServiceConnection mAidlConnection;
     private Intent mServiceIntent;
@@ -32,7 +34,7 @@ public class AidlActivity extends AppCompatActivity {
 
         mServiceIntent = new Intent(this, AidlService.class);
         startService(mServiceIntent);
-        Log.d(TAG, "onCreate: " + "开启服务");
+        Log.d(TAG, "onCreate: " + "开启服务" + index++);
         mAidlConnection = new AidlConnection();
         bindService(mServiceIntent, mAidlConnection, BIND_AUTO_CREATE);
     }
@@ -46,7 +48,7 @@ public class AidlActivity extends AppCompatActivity {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        Log.e(TAG, list.get(0) + "-------" + flag);
+        Log.e(TAG, list.get(0) + "-------" + flag + "===:" + index);
     }
 
     public void bindCallback(View view) {
@@ -96,5 +98,9 @@ public class AidlActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         super.onDestroy();
+    }
+
+    public void start(View view){
+        startActivity(new Intent(this, AidlActivity.class));
     }
 }

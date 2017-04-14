@@ -26,4 +26,6 @@ dependencies {
     compile commonDependencies.supportAppcompat
     compile commonDependencies.supportRecyclerView
 
+    compile commonDependencies.guava
+
 }

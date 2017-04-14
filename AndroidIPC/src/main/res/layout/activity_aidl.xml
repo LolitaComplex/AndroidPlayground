@@ -30,6 +30,13 @@
             android:onClick="unbindCallback"
             android:text="解绑CallBack"
             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="start"
+            android:text="start"
+            />
     </LinearLayout>
 
 
