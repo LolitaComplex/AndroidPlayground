@@ -36,7 +36,6 @@ public class GlideRoundTransform extends BitmapTransformation {
         if (toTransform == null) {
             return null;
         }
-
         Bitmap result = pool.get(toTransform.getWidth(), toTransform.getHeight(),
                 Bitmap.Config.ARGB_8888);
         if (result == null) {
@@ -44,7 +43,7 @@ public class GlideRoundTransform extends BitmapTransformation {
                     Bitmap.Config.ARGB_8888);
         }
 
-        Canvas canvas = new Canvas();
+        Canvas canvas = new Canvas(result);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         //x与y剩余空间全部剪掉，没必要显示。剩下俩参数表示重复或者镜像显示

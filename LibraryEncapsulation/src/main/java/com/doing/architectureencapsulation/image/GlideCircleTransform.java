@@ -5,7 +5,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ComposeShader;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 
@@ -45,9 +49,19 @@ public class GlideCircleTransform extends BitmapTransformation {
         Canvas canvas = new Canvas(result);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setShader(new BitmapShader(result, BitmapShader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        paint.setShader(new BitmapShader(toTransform, BitmapShader.TileMode.CLAMP, Shader.TileMode.CLAMP));
 
         canvas.drawCircle(size / 2, size / 2, size / 2, paint);
+
+//        Canvas canvas = new Canvas(toTransform);
+//        BitmapShader bitmapShader = new BitmapShader(toTransform, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+//        int min = Math.min(toTransform.getWidth(), toTransform.getHeight());
+//        RadialGradient radialGradient = new RadialGradient(toTransform.getWidth() / 2, toTransform.getHeight() / 2,
+//                min / 2, Color.TRANSPARENT, Color.WHITE, Shader.TileMode.CLAMP);
+//        ComposeShader composeShader = new ComposeShader(bitmapShader, radialGradient, PorterDuff.Mode.CLEAR);
+//        Paint paint = new Paint();
+//        paint.setShader(composeShader);
+//        canvas.drawRect(0, 0, toTransform.getWidth(), toTransform.getHeight(), paint);
         return result;
     }
 

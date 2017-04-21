@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.doing.window.R;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DecorViewController implements View.OnClickListener {
 

@@ -10,5 +10,8 @@ package com.doing.architecture.mvp.base;
 
 public interface BasePresenter {
 
+    /**
+     * Precenter启动的开关
+     */
     void start();
 }

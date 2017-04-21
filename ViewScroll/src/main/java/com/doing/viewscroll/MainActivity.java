@@ -67,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Observable.interval(1, TimeUnit.SECONDS)
                         .take(1)
+                        .takeWhile(new Func1<Long, Boolean>() {
+                            @Override
+                            public Boolean call(Long aLong) {
+                                return null;
+                            }
+                        })
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Action1<Long>() {
                             @Override

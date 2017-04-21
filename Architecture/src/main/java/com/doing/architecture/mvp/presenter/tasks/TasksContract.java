@@ -1,5 +1,7 @@
 package com.doing.architecture.mvp.presenter.tasks;
 
+import android.support.annotation.NonNull;
+
 import com.doing.architecture.mvp.base.BasePresenter;
 import com.doing.architecture.mvp.base.BaseView;
 import com.doing.architecture.mvp.model.entity.Task;
@@ -22,19 +24,19 @@ public interface TasksContract {
 
         void showTasks(List<Task> task);
 
-        void showAddTaks();
+        void showAddTask();
 
         void showTaskDetailsUi(String taskId);
 
-        void showTaskMarkedCompelete();
+        void showTaskMarkedComplete();
 
         void showTaskMarkedActive();
 
-        void showCompeltedTasksCleared();
+        void showCompletedTasksCleared();
 
         void showLoadingTasksError();
 
-        void showNoTask();
+        void showNoTasks();
 
         void showActiveFilterLabel();
 
@@ -44,9 +46,9 @@ public interface TasksContract {
 
         void showNoActiveTasks();
 
-        void showNoCompeletedTasks();
+        void showNoCompletedTasks();
 
-        void showSuccessfullySaveMessage();
+        void showSuccessfullySavedMessage();
 
         boolean isActive();
 
@@ -54,7 +56,23 @@ public interface TasksContract {
     }
 
     interface Precenter extends BasePresenter{
+
+        void result(int requestCode, int resultCode);
+
+        void loadTasks(boolean forceUpdate);
+
+        void addNewTask();
+
+        void openTaskDetails(@NonNull Task requestTask);
+
+        void completeTask(@NonNull Task completeTask);
+
+        void activeteTask(@NonNull Task activeTask);
+
+        void clearCompletedTasks();
+
+        void setFiltering(TasksFilterType requestType);
+
+        TasksFilterType getFiltering();
     }
-
-
 }

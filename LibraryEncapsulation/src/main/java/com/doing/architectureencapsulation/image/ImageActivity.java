@@ -36,6 +36,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func2;
 
+import static android.R.attr.id;
+
 public class    ImageActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "ImageActivity";
@@ -193,7 +195,7 @@ public class    ImageActivity extends Activity implements View.OnClickListener {
     }
 
     private void setImageWithGlide(ImageView iv, int id) {
-        Glide.with(this).load(id).into(iv);
+        ImageUtils.setResId(iv, id);
     }
 
     private void setImageWithGlide(ImageView iv, String url) {
@@ -201,7 +203,7 @@ public class    ImageActivity extends Activity implements View.OnClickListener {
             int id = Integer.parseInt(url);
             setImageWithGlide(iv, id);
         } catch (Exception e) {
-            Glide.with(this).load(url).into(iv);
+            ImageUtils.setCircleUrl(iv, url);
         }
 
     }
