@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/LibraryEncapsulation/LibraryEncapsulation.iml" filepath="$PROJECT_DIR$/LibraryEncapsulation/LibraryEncapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Loader/Loader.iml" filepath="$PROJECT_DIR$/Loader/Loader.iml" />
       <module fileurl="file://$PROJECT_DIR$/MaterialDesignAnimation/MaterialDesignAnimation.iml" filepath="$PROJECT_DIR$/MaterialDesignAnimation/MaterialDesignAnimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewFeature/NewFeature.iml" filepath="$PROJECT_DIR$/NewFeature/NewFeature.iml" />
       <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" filepath="$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" />
       <module fileurl="file://$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" filepath="$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" />

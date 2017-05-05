@@ -3,6 +3,7 @@ package com.doing.viewscroll.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
@@ -31,6 +32,7 @@ public class ScrollView extends ImageView {
     private int startX;
     private int startY;
 
+
     private ScrollerCompat mScroller;
 
     public ScrollView(Context context) {
@@ -53,6 +55,7 @@ public class ScrollView extends ImageView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.i(TAG, "onMeasure: " + SystemClock.currentThreadTimeMillis());
         int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpecMode = MeasureSpec.getSize(heightMeasureSpec);
@@ -186,7 +189,14 @@ public class ScrollView extends ImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.i(TAG, "onDraw: " + System.currentTimeMillis());
         super.onDraw(canvas);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        Log.i(TAG, "onLayout: " + System.currentTimeMillis());
+        super.onLayout(changed, left, top, right, bottom);
     }
 
     @Override

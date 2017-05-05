@@ -6,7 +6,10 @@ import android.os.Looper;
 
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 /**
  * Class description here
@@ -27,6 +30,9 @@ public class HttpClientWrapper {
                 .readTimeout(10, TimeUnit.SECONDS)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .build();
+
+        Call call = mOkHttpClient.newCall(new Request.Builder().url("").post(new FormBody.Builder().build()).build());
+        call.cancel();
 
         mExecutorDelivery = new ExecutorDelivery(new Handler(Looper.getMainLooper()));
     }

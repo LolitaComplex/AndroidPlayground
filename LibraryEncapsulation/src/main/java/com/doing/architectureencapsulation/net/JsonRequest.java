@@ -21,7 +21,7 @@ public abstract class JsonRequest<T> extends BaseRequest<T> {
     public String getRequestString() {
         try {
             if (mBodyMap != null && mBodyMap.size() > 0) {
-                return new GsonBuilder().enableComplexMapKeySerialization()
+                    return new GsonBuilder().enableComplexMapKeySerialization()
                         .create().toJson(mBodyMap);
             }
         } catch (Exception e1) {

@@ -144,16 +144,16 @@ public abstract class BaseRequest<T> {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     int code = response.code();
-                    HttpResponse<T> repoonse;
+                    HttpResponse<T> httpResponse;
                     if (code == 200) {
                         ResponseBody body = response.body();
-                        repoonse = getResponse(body);
+                        httpResponse = getResponse(body);
                     } else {
-                        repoonse = new HttpResponse<>();
-                        repoonse.code = 404;
-                        repoonse.message = "服务器错误";
+                        httpResponse = new HttpResponse<>();
+                        httpResponse.code = 404;
+                        httpResponse.message = "服务器错误";
                     }
-                    mExecutorDelivery.postSuccessResponse(callback, BaseRequest.this, repoonse);
+                    mExecutorDelivery.postSuccessResponse(callback, BaseRequest.this, httpResponse);
                 }
             });
 
@@ -162,8 +162,6 @@ public abstract class BaseRequest<T> {
 
 
     public abstract String getApi();
-
-    public abstract Class getModelClass();
 
     @HttpConstants.HttpMethodMode
     public abstract int getHttpMethod();

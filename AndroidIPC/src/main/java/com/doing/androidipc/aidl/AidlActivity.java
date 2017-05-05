@@ -89,15 +89,15 @@ public class AidlActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onDestroy() {
+    protected void onPause() {
         unbindService(mAidlConnection);
-        stopService(mServiceIntent);
+//        stopService(mServiceIntent);
         try {
             mAidlManager.unRegistCallback(mAidlCallback);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        super.onDestroy();
+        super.onPause();
     }
 
     public void start(View view){

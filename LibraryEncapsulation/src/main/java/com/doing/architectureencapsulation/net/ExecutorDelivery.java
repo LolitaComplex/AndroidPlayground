@@ -18,7 +18,6 @@ public class ExecutorDelivery {
 
     private final Executor mResponsePoster;
 
-
     public ExecutorDelivery(final Handler handler) {
         mResponsePoster = new Executor() {
             @Override
@@ -80,4 +79,5 @@ public class ExecutorDelivery {
             }
         }
     }
+
 }

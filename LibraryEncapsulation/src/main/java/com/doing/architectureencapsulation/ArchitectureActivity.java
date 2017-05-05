@@ -58,6 +58,6 @@ public class ArchitectureActivity extends AppCompatActivity {
         );
 
 
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new ContentFragment()).commit();
     }
 }

@@ -20,7 +20,11 @@
             android:process=":messager"
             />
         <activity android:name=".aidl.AidlActivity"/>
-        <service android:name=".aidl.AidlService" />
+        <service
+            android:name=".aidl.AidlService"
+            android:process="com.doing.service.aidl"
+            android:isolatedProcess="true"
+            />
     </application>
 
 </manifest>

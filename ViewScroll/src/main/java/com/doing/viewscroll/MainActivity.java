@@ -49,39 +49,53 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.MainActivity_iv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                int index = mark % 3;
-                switch (index) {
-                    case 0:
-                        ((ScrollView) v).smoothScrollTo(-500, 0);
-                        break;
 
-                    case 1:
-                        ((ScrollView) v).smoothScrollTo(0, -500);
-                        break;
+                v.requestLayout();
+//                v.requestLayout();
+//                v.requestLayout();
+//                v.requestLayout();
+//                v.requestLayout();
 
-                    case 2:
-                        ((ScrollView) v).smoothScrollTo(-600, -600);
-                        break;
-                }
+                v.post(new Runnable() {
+                    @Override
+                    public void run() {
+//                        v.invalidate();
+                    }
+                });
 
-
-                Observable.interval(1, TimeUnit.SECONDS)
-                        .take(1)
-                        .takeWhile(new Func1<Long, Boolean>() {
-                            @Override
-                            public Boolean call(Long aLong) {
-                                return null;
-                            }
-                        })
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Action1<Long>() {
-                            @Override
-                            public void call(Long aLong) {
-                                ((ScrollView) v).smoothScrollTo(0, 0);
-                            }
-                        });
-
-                mark = index + 1;
+//                int index = mark % 3;
+//                switch (index) {
+//                    case 0:
+//                        ((ScrollView) v).smoothScrollTo(-500, 0);
+//                        break;
+//
+//                    case 1:
+//                        ((ScrollView) v).smoothScrollTo(0, -500);
+//                        break;
+//
+//                    case 2:
+//                        ((ScrollView) v).smoothScrollTo(-600, -600);
+//                        break;
+//                }
+//
+//
+//                Observable.interval(1, TimeUnit.SECONDS)
+//                        .take(1)
+//                        .takeWhile(new Func1<Long, Boolean>() {
+//                            @Override
+//                            public Boolean call(Long aLong) {
+//                                return null;
+//                            }
+//                        })
+//                        .observeOn(AndroidSchedulers.mainThread())
+//                        .subscribe(new Action1<Long>() {
+//                            @Override
+//                            public void call(Long aLong) {
+//                                ((ScrollView) v).smoothScrollTo(0, 0);
+//                            }
+//                        });
+//
+//                mark = index + 1;
 
 //                ObjectAnimator.ofFloat(new ViewWrapwer(v), "verticalOffset", 100).start();
             }

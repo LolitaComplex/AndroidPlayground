@@ -59,6 +59,7 @@ public class AidlService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        Log.i(TAG, "onBind: ");
         return mBinder;
     }
 
@@ -66,13 +67,24 @@ public class AidlService extends Service {
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
-        Log.d(TAG, "onStart: " + "服务开始了");
-    }
+            Log.d(TAG, "onStart: " + "服务开始了");
+}
 
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate: " + "服务被创建了");
 
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        Log.i(TAG, "onRebind: ");
+        super.onRebind(intent);
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return true;
     }
 }

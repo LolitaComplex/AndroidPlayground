@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.doing.newfeature"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".FeatureActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".jellybean.JellyBeanActivity"/>
+        <activity
+            android:name=".jellybean.parentactivity.TargetActivity"
+            android:parentActivityName=".FeatureActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FeatureActivity"/>
+        </activity>
+        <activity
+            android:name=".jellybean.parentactivity.SonActivity"
+            android:parentActivityName=".jellybean.parentactivity.ParentActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".jellybean.parentactivity.ParentActivity"/>
+        <activity android:name=".jellybean.accessibility.AccessibilityActivity">
+        </activity>
+    </application>
+
+</manifest>

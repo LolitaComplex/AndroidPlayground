@@ -10,20 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.dong.lib.utils.LogUtils;
 import com.dong.lib.utils.StreamUtil;
 import com.dong.lib.utils.UIUtils;
 import com.dong.viewcollection.R;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -33,6 +22,17 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.Headers;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * Created by 杜营 on 2016/6/24.
@@ -71,11 +71,11 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        for (String cancelTag : cancelTagList) {
-            if (client != null) {
-                client.cancel(cancelTag);
-            }
-        }
+//        for (String cancelTag : cancelTagList) {
+//            if (client != null) {
+//                client.cancel(cancelTag);
+//            }
+//        }
         cancelTagList.clear();
 
         switch (view.getId()) {
@@ -113,12 +113,11 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
 
         final String cancelType = "POST";
         cancelTagList.add(cancelType);
-        FormEncodingBuilder builder = new FormEncodingBuilder();
-        builder.add("Doing", "鸿洋大神");
+        FormBody builder = new FormBody.Builder().add("Doing", "鸿洋大神").build();
 
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), "json");
 
-        Request request = new Request.Builder().url(URL).post(builder.build()).tag(cancelType).build();
+        Request request = new Request.Builder().url(URL).post(builder).tag(cancelType).build();
 
         client.newCall(request).enqueue(new RequestCallback("Post请求"));
 
@@ -140,9 +139,8 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
 
     private void upload() {
         if (client == null)
-            client = new OkHttpClient();
+            client = new OkHttpClient.Builder().connectTimeout(30, TimeUnit.SECONDS).build();
 
-        client.setConnectTimeout(30, TimeUnit.HOURS);
         final String cancelType = "UPLOAD";
         cancelTagList.add(cancelType);
         //把资产目录某文件复制到本地
@@ -171,7 +169,7 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
             }
 
             RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), targetFile);
-            RequestBody requestBody = new MultipartBuilder().type(MultipartBuilder.FORM)
+            RequestBody requestBody = new MultipartBody.Builder()
                     .addPart(Headers.of("Content-Disposition", "form-data;name=\"username\""), RequestBody.create(null, "杜营"))
                     .addPart(Headers.of("Content-Disposition", "form-data;name=\"image\";filename=\"upload.jpg\""), fileBody)
                     .build();
@@ -196,7 +194,7 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
         }
 
         @Override
-        public void onFailure(Request request, IOException e) {
+        public void onFailure(Call call, IOException e) {
             UIUtils.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -207,7 +205,7 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
         }
 
         @Override
-        public void onResponse(Response response) throws IOException {
+        public void onResponse(Call call, Response response) throws IOException {
             final String htmlStr = response.body().string();
             UIUtils.runOnUiThread(new Runnable() {
                 @Override
@@ -227,11 +225,9 @@ public class OkHttpFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onStop() {
-        for (String cancelTag : cancelTagList) {
-            if (client != null) {
-                client.cancel(cancelTag);
-            }
-        }
-        super.onDestroy();
+//        for (String cancelTag : cancelTagList) {
+////            if (client != null) client.(cancelTag);
+//        }
+        super.onStop();
     }
 }
