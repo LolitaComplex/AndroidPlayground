@@ -1,5 +1,8 @@
 package com.doing.newfeature.jellybean.accessibility;
 
+import android.animation.Animator;
+import android.animation.TimeAnimator;
+import android.app.ActivityOptions;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Build;
@@ -27,9 +30,28 @@ public class AccessibilityActivity extends AppCompatActivity {
 
         AccessibilityEvent obtain = AccessibilityEvent.obtain();
         AccessibilityNodeInfo source = obtain.getSource();
-        ClipData.
-        Intent intent = new Intent();
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            TimeAnimator animator = new TimeAnimator();
+            animator.setTimeListener(new TimeAnimator.TimeListener() {
+                @Override
+                public void onTimeUpdate(TimeAnimator animation, long totalTime, long deltaTime) {
+
+                }
+            });
+            animator.addPauseListener(new Animator.AnimatorPauseListener() {
+                @Override
+                public void onAnimationPause(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationResume(Animator animation) {
+
+                }
+            });
+            animator.start();
+        }
 
     }
 
