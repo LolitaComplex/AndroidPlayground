@@ -2,13 +2,19 @@
 <manifest package="com.doing.newfeature"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requiredAccountType="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FeatureActivity">
+        <activity
+            android:name=".FeatureActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="locked"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -31,6 +37,8 @@
         </activity>
         <activity android:name=".jellybean.parentactivity.ParentActivity"/>
         <activity android:name=".jellybean.accessibility.AccessibilityActivity">
+        </activity>
+        <activity android:name=".jellybean.bluetooth.BluetoothActivity">
         </activity>
     </application>
 

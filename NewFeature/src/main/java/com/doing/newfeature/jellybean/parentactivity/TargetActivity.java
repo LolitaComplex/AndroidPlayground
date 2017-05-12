@@ -78,7 +78,7 @@ public class TargetActivity extends AppCompatActivity implements View.OnClickLis
 
     public void toBackParentActivity() {
         Intent upIntent = NavUtils.getParentActivityIntent(this);
-        upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
             // This activity is NOT part of this app's task, so create a new task
             // when navigating up, with a synthesized back stack.

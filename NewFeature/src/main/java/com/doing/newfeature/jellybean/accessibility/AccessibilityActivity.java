@@ -2,15 +2,11 @@ package com.doing.newfeature.jellybean.accessibility;
 
 import android.animation.Animator;
 import android.animation.TimeAnimator;
-import android.app.ActivityOptions;
-import android.content.ClipData;
-import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.view.accessibility.AccessibilityEventCompat;
-import android.support.v4.view.accessibility.AccessibilityRecordCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
@@ -31,7 +27,7 @@ public class AccessibilityActivity extends AppCompatActivity {
         AccessibilityEvent obtain = AccessibilityEvent.obtain();
         AccessibilityNodeInfo source = obtain.getSource();
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             TimeAnimator animator = new TimeAnimator();
             animator.setTimeListener(new TimeAnimator.TimeListener() {
                 @Override
@@ -39,19 +35,22 @@ public class AccessibilityActivity extends AppCompatActivity {
 
                 }
             });
-            animator.addPauseListener(new Animator.AnimatorPauseListener() {
-                @Override
-                public void onAnimationPause(Animator animation) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                animator.addPauseListener(new Animator.AnimatorPauseListener() {
+                    @Override
+                    public void onAnimationPause(Animator animation) {
 
-                }
+                    }
 
-                @Override
-                public void onAnimationResume(Animator animation) {
+                    @Override
+                    public void onAnimationResume(Animator animation) {
 
-                }
-            });
+                    }
+                });
+            }
             animator.start();
         }
+
 
     }
 

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.doing.newfeature.FeatureActivity;
 import com.doing.newfeature.R;
 import com.doing.newfeature.jellybean.parentactivity.TargetActivity;
 
@@ -15,10 +16,15 @@ public class JellyBeanActivity extends AppCompatActivity implements View.OnClick
         context.startActivity(new Intent(context, JellyBeanActivity.class));
     }
 
+    public static JellyBeanActivity instance;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jelly_bean);
+
+        instance = this;
 
         findViewById(R.id.JellyBeanActivity_btn_parentActivity).setOnClickListener(this);
     }
