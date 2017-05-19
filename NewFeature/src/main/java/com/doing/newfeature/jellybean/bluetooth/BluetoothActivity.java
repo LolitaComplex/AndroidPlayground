@@ -1,5 +1,6 @@
 package com.doing.newfeature.jellybean.bluetooth;
 
+import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
@@ -12,9 +13,11 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.printservice.PrintDocument;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroupOverlay;
 
@@ -68,6 +71,10 @@ public class BluetoothActivity extends AppCompatActivity {
             ViewGroupOverlay overlay = view.getOverlay();
         }
 
+        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            boolean lowRamDevice = manager.isLowRamDevice();
+        }
 
     }
 }
