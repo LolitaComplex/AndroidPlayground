@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/AliveService/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/AndroidIPC/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/AndroidWindow/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Annotation/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/Architecture/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/Canvas/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/FragmentPagerAdapter/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/annotations.zip!/" />
@@ -29,6 +30,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.1.0/support-core-utils-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.1.0/support-core-utils-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.1.0/support-core-utils-25.1.0-sources.jar!/" />
       <root url="jar://D:/Program/Android/studio/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.1.0/support-core-utils-25.1.0-sources.jar!/" />

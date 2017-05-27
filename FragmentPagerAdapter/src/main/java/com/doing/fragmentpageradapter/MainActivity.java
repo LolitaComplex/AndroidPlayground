@@ -7,6 +7,7 @@ import android.view.View;
 import com.doing.fragmentpageradapter.ui.activity.CyclePagerActivity;
 import com.doing.fragmentpageradapter.ui.activity.PagerActivity;
 import com.doing.fragmentpageradapter.ui.activity.StatePagerActivity;
+import com.doing.fragmentpageradapter.ui.activity.TouchImageViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,5 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickCyclePager(View view) {
         CyclePagerActivity.start(this);
+    }
+
+    public void onClickTouchImageView(View view) {
+        TouchImageViewActivity.start(this);
     }
 }

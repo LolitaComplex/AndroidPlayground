@@ -26,6 +26,8 @@ import com.doing.canvas.R;
 
 import java.security.Key;
 
+import static android.R.attr.startX;
+
 /**
  * Created by Doing on 2016/10/26.
  *
@@ -94,8 +96,6 @@ public class CanvasView extends View {
         path.lineTo(mWidthSize - PADDING, mHeightSize - PADDING);
         canvas.drawPath(path, paint);
 
-        initTextPatint();
-
         //画表头与坐标
         paint = initTextPatint();
         for (int x = 0; x < 9; x++) {
@@ -116,24 +116,27 @@ public class CanvasView extends View {
         for (int x = 0; x < xTitleBuf.length; x++) {
             canvasXItem(canvas, x);
         }
-
         drawProfit(canvas);
     }
 
     private void drawProfit(Canvas canvas) {
-        canvas.save();
+//        canvas.save();
 
         Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.profit);
-        canvas.translate(mWidthSize / 2 - 200, mHeightSize / 2 - 200);
-        canvas.rotate(-30f, 200, 200);
+        Paint paint = initTextPatint();
+        paint.setColor(Color.BLUE);
+
 
         Path cirlcePath = new Path();
         Path.Direction direction = Path.Direction.CW;
         cirlcePath.addCircle(200, 200, 200, direction);
 
         //设置Drawable的位置大小，四个坐标点是以Canvas为原点的
-        drawable.setBounds(0, 0, 400, 400);
+        canvas.translate(mWidthSize / 2 - 200, mHeightSize / 2 - 200);
+        canvas.rotate(135f, 0, 0);
+        canvas.drawRect(0, 0, 500, 700, paint);
         canvas.clipPath(cirlcePath, Region.Op.REPLACE);
+        drawable.setBounds(0, 0, 400, 400);
 
         drawable.draw(canvas);
 
@@ -151,7 +154,7 @@ public class CanvasView extends View {
         int startX = PADDING + (index + 1) * itemDistence;
         Paint paint = initPathPaint();
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        float top = (1-mValueBuf[index]) * (mHeightSize - 2 * PADDING) + PADDING;
+        float top = (1 - mValueBuf[index]) * (mHeightSize - 2 * PADDING) + PADDING;
         canvas.drawRect(startX - 20, top, startX + 20, mHeightSize - PADDING - 3, paint);
 
         canvas.save();
@@ -163,13 +166,6 @@ public class CanvasView extends View {
         canvas.rotate(-30f, startX, mHeightSize - PADDING + 35);
         canvas.drawText(xTitleBuf[index], startX, mHeightSize - PADDING + 35, paint);
         canvas.restore();
-
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile("", options);
-
-        options.inScaled = true;
-
     }
 
     private Paint initTextPatint() {

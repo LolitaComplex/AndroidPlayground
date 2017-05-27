@@ -24,5 +24,10 @@
     <Button
         android:onClick="onClickCyclePager"
         style="@style/ButtonStyle"
-        android:text="StatePager"/>
+        android:text="CyclePager"/>
+
+    <Button
+        android:onClick="onClickTouchImageView"
+        style="@style/ButtonStyle"
+        android:text="TouchImageView"/>
 </LinearLayout>

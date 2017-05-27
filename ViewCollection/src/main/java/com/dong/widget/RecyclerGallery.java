@@ -3,6 +3,7 @@ package com.dong.widget;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.dong.lib.utils.LogUtils;
@@ -13,6 +14,8 @@ import com.dong.lib.utils.LogUtils;
  *
  */
 public class RecyclerGallery extends RecyclerView{
+
+    private static final String TAG = "RecyclerGallery";
 
     private View mCurrentView;
 
@@ -43,8 +46,8 @@ public class RecyclerGallery extends RecyclerView{
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-
         mCurrentView = getChildAt(0);
+        Log.d(TAG, "onLayout: " + mCurrentView);
         if(mCurrentItemChangeListener != null){
             mCurrentItemChangeListener.onItemChange(mCurrentView,getChildAdapterPosition(mCurrentView));
         }
@@ -66,7 +69,7 @@ public class RecyclerGallery extends RecyclerView{
         @Override
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             View newView = getChildAt(0);//获取当前第一个View
-            LogUtils.e("Doing",newState+"状态");
+            Log.d(TAG, "onScrollStateChanged: " + mCurrentView);
             //当已经滑动状态改变，比如拖动、放开、flag等等状态，才会触发图片改变的回调
             if(mCurrentItemChangeListener != null){
                 //当当前View与上一个View不同时就替换，减少替换次数增加效率
@@ -76,6 +79,11 @@ public class RecyclerGallery extends RecyclerView{
                 }
             }
         }
+
     }
 
+    @Override
+    public void onScrolled(int dx, int dy) {
+        super.onScrolled(dx, dy);
+    }
 }
