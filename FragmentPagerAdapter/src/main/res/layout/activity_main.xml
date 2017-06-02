@@ -30,4 +30,5 @@
         android:onClick="onClickTouchImageView"
         style="@style/ButtonStyle"
         android:text="TouchImageView"/>
+
 </LinearLayout>

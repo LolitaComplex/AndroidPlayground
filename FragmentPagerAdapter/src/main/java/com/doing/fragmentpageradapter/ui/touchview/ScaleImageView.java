@@ -5,28 +5,29 @@ import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
-import static android.R.attr.scaleX;
-import static android.R.attr.scaleY;
 
 /**
- * Class description here
+ * 可发大缩小的自定义View
  *
  * @author doing
  * @version 1.0.0
  * @since 2017-05-26.
  */
 
-public class ScaleImageView extends ImageView implements ScaleGestureDetector.OnScaleGestureListener,
-        ViewTreeObserver.OnGlobalLayoutListener {
+public class ScaleImageView extends ImageView implements ViewTreeObserver.OnGlobalLayoutListener {
 
-    public static final float MAX_SCALE_SISE = 1.5f;
+    private static final String TAG = "ScaleImageView";
+
+    public static final float MAX_SCALE_SIZE = 1.5f;
     //手势识别
     private ScaleGestureDetector mScaleGestureDetector;
     //第一次初始化的标记
@@ -35,9 +36,16 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
 
     private final float[] mMatrixValues = new float[9];
 
-    private static final String TAG = "ScaleImageView";
     private float mMinScaleSize;
+    private AnimatorData mAnimatorData;
     private RectF mImageRectF;
+    private GestureDetector mGestureDetector;
+    private int mWidth;
+    private int mHeight;
+    private boolean mScaleBegin;
+    private float mStartX;
+    private boolean mBoundaryStart;
+    private boolean mBoundaryEnd;
 
     public ScaleImageView(Context context) {
         super(context);
@@ -55,8 +63,10 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
     protected void onFinishInflate() {
         setScaleType(ScaleType.MATRIX);
         mScaleGestureDetector = new ScaleGestureDetector(
-                getContext(), this);
+                getContext(), new OnScaleGestureListener());
         mScaleMatrix = new Matrix();
+        mGestureDetector = new GestureDetector(this.getContext(),
+                new OnTranslationGestureListener());
     }
 
     @Override
@@ -68,7 +78,9 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        }
     }
 
     private void initLayout() {
@@ -77,23 +89,24 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
             if (drawable == null)
                 return;
 
-            int width = getMeasuredWidth();
-            int height = getMeasuredHeight();
+            mWidth = getWidth();
+            mHeight = getHeight();
 
             //拿到的是Bitmap在对应Dpi缩放后的大小，也就是实际的宽高.Bitmap.getWidth是图片的原宽
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int intrinsicHeight = drawable.getIntrinsicHeight();
 
-            float scaleWidth = width * 1.f / intrinsicWidth;
-            float scaleHeight = height * 1.f / intrinsicHeight;
+            float scaleWidth = mWidth * 1.f / intrinsicWidth;
+            float scaleHeight = mHeight * 1.f / intrinsicHeight;
 
-            //CenterInsdide的效果
+            //CenterInside的效果
             float scale = scaleWidth < scaleHeight ? scaleWidth : scaleHeight;
             scale = Math.min(scale, 1);
             mMinScaleSize = scale;
-            mScaleMatrix.setTranslate((width - intrinsicWidth) / 2.f, (height - intrinsicHeight) / 2.f);
-            mScaleMatrix.postScale(scale, scale, width / 2.f, height / 2.f);
+            mScaleMatrix.setTranslate((mWidth - intrinsicWidth) / 2.f, (mHeight - intrinsicHeight) / 2.f);
+            mScaleMatrix.postScale(scale, scale, mWidth / 2.f, mHeight / 2.f);
             setImageMatrix(mScaleMatrix);
+            //初始化Rect
             getImageRectF();
             once = false;
         }
@@ -101,34 +114,168 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return mScaleGestureDetector.onTouchEvent(event);
+        boolean scaleEvent = mScaleGestureDetector.onTouchEvent(event);
+        boolean clickEvent = mGestureDetector.onTouchEvent(event);
+
+        float deltaX = event.getX();
+
+        float scaleSize = getScaleSize();
+
+        Log.d(TAG, "StartX: " + mStartX + "\t deltaX: " + deltaX + "\t"
+                + isBoundaryStart() + "\t " + isBoundaryEnd() + "\t Action: " + event.getAction());
+        if (scaleSize == mMinScaleSize) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            mBoundaryStart = false;
+        } else {
+            if (mBoundaryStart || mBoundaryEnd) {
+                if (mStartX != 0 && mStartX < deltaX && isBoundaryStart() && mBoundaryStart){
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                } else if (mStartX != 0 && mStartX > deltaX && isBoundaryEnd() && mBoundaryEnd){
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                } else {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+
+            } else {
+                getParent().requestDisallowInterceptTouchEvent(true);
+                mBoundaryStart = mBoundaryEnd = false;
+            }
+            changeBoundaryFlag(event);
+        }
+
+        mStartX = event.getX();
+        return scaleEvent || clickEvent;
     }
 
-    @Override
-    public boolean onScale(ScaleGestureDetector detector) {
-        float scale = getScaleSize();
-        float scaleFactor = detector.getScaleFactor();
-        if (scale < MAX_SCALE_SISE || scaleFactor < MAX_SCALE_SISE) {
-            if (scale * scaleFactor > MAX_SCALE_SISE) {
-                scaleFactor = MAX_SCALE_SISE / scale;
+    private void changeBoundaryFlag(MotionEvent event) {
+        if (isBoundaryStart() && event.getAction() == MotionEvent.ACTION_UP) {
+            mBoundaryStart = true;
+            mBoundaryEnd = false;
+        } else if (isBoundaryEnd() && event.getAction() == MotionEvent.ACTION_UP) {
+            mBoundaryEnd = true;
+            mBoundaryStart = false;
+        } else if (event.getAction() == MotionEvent.ACTION_UP){
+            mBoundaryStart = mBoundaryEnd = false;
+        }
+    }
+
+    private class OnTranslationGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        private boolean doubleFlag = false;
+
+        //未复写onDown因为上边用的或的关系，这里返回值变得不是那么重要
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            float doubleX = e.getX();
+            float doubleY = e.getY();
+
+            if (!doubleFlag) {
+                mAnimatorData = new AnimatorData(doubleX, doubleY,
+                        getScaleSize() <= 0.75f ? 0.75f : 1.f);
+            } else {
+                mAnimatorData = new AnimatorData(mWidth / 2, mHeight / 2,
+                        mMinScaleSize);
             }
+            doubleFlag = !doubleFlag;
+
+            ObjectAnimator.ofFloat(ScaleImageView.this, "scaleSize",0, 1.f)
+                    .setDuration(500)
+                    .start();
+            Log.i(TAG, "onDoubleTap: doubleX : " + doubleX + "\t doubleY : " + doubleY);
+            return super.onDoubleTap(e);
+        }
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            if (mScaleBegin) {
+                return false;
+            }
+            Log.w(TAG, "onScroll: distanceX : " + distanceX + "\t distanceY : " + distanceY);
+            RectF rect = getImageRectF();
+
+            float deltaX = 0;
+            float deltaY = 0;
+            if (rect.width() > mWidth) {
+
+                if (distanceX > 0 && Math.abs(rect.right - mWidth) < distanceX) {
+                    deltaX = mWidth - rect.right;
+                } else if (distanceX < 0 && Math.abs(rect.left) < -distanceX) {
+                    deltaX = -rect.left;
+                } else {
+                    deltaX = -distanceX;
+                }
+            }
+
+            if (rect.height() > mHeight) {
+                if (distanceY > 0 && Math.abs(rect.bottom - mHeight) < distanceY) {
+                    deltaY = mHeight - rect.bottom;
+                } else if (distanceY < 0 && Math.abs(rect.top) < -distanceY) {
+                    deltaY = -rect.top;
+                } else {
+                    deltaY = -distanceY;
+                }
+            }
+            mScaleMatrix.postTranslate(deltaX, deltaY);
+            setImageMatrix(mScaleMatrix);
+            return true;
+        }
+
+    }
+
+    private void scaleToTargetSize(float scaleSize, float focusX, float focusY) {
+        mScaleMatrix.postScale(scaleSize, scaleSize, focusX, focusY);
+        correctRect();
+        setImageMatrix(mScaleMatrix);
+
+    }
+
+    private class OnScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            Log.d(TAG, "onScale: FocusX" + detector.getFocusX() + "\t FocusY:" + detector.getFocusY());
+            float scale = getScaleSize();
+            float scaleFactor = detector.getScaleFactor();
+            if (scale < MAX_SCALE_SIZE || scaleFactor < MAX_SCALE_SIZE) {
+                if (scale * scaleFactor > MAX_SCALE_SIZE) {
+                    scaleFactor = MAX_SCALE_SIZE / scale;
+                }
 //            Log.i(TAG, "onScale: scale : " + scale + "\t scaleFactor : " + scale * scaleFactor);
 
-            RectF rect = getImageRectF();
+//            RectF rect = getImageRectF();
 
 //            float scaleX = rect.right - rect.left > getWidth() ? detector.getFocusX() : getWidth() / 2;
 //            float scaleY = rect.bottom - rect.top > getHeight() ? detector.getFocusY() : getHeight() / 2;
 
 //            Log.i(TAG, "scaleX: " + scaleX + "\t scaleY：" + scaleY);
-            mScaleMatrix.postScale(scaleFactor, scaleFactor, detector.getFocusX(), detector.getFocusY());
 //            Log.d(TAG, "onScale: " + detector.getCurrentSpanX() + "\t : " + detector.getPreviousSpanX());
 //            if (detector.getCurrentSpan() < detector.getPreviousSpan()) {
-                correctRect();
 //            }
-            setImageMatrix(mScaleMatrix);
-
+                scaleToTargetSize(scaleFactor, detector.getFocusX(), detector.getFocusY());
+            }
+            return true;
         }
-        return true;
+
+        @Override
+        public void onScaleEnd(ScaleGestureDetector detector) {
+            float scale = getScaleSize();
+            if (scale < mMinScaleSize) {
+                Log.w(TAG, "onScaleEnd: ");
+                //属性动画传递的是当前进度，其实应该再估值器中计算正确的值
+                mAnimatorData = new AnimatorData(mWidth / 2, mHeight / 2,
+                        mMinScaleSize);
+                ObjectAnimator.ofFloat(ScaleImageView.this, "scaleSize", 1.f)
+                        .setDuration(500)
+                        .start();
+            }
+            mScaleBegin = false;
+        }
+
+        @Override
+        public boolean onScaleBegin(ScaleGestureDetector detector) {
+            Log.d(TAG, "onScaleBegin: ");
+            return mScaleBegin = true;
+        }
     }
 
     private void correctRect() {
@@ -151,16 +298,14 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
         float deltaX = 0;
         float deltaY = 0;
 
-        float width = getWidth();
-        float height = getHeight();
 
         Log.d(TAG, "Rect: " + rect);
         if (rect.width() > getWidth()) {
             if ((rect.left > 0)) {
                 deltaX = -rect.left;
             }
-            if (rect.right < width) {
-                deltaX = width - rect.right;
+            if (rect.right < mWidth) {
+                deltaX = mWidth - rect.right;
             }
             Log.i(TAG, "修正X：" + deltaX);
         }
@@ -169,38 +314,20 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
             if (rect.top > 0) {
                 deltaY = -rect.top;
             }
-            if (rect.bottom < height) {
-                deltaY = height - rect.bottom;
+            if (rect.bottom < mHeight) {
+                deltaY = mHeight - rect.bottom;
             }
             Log.i(TAG, "修正Y：" + deltaY);
         }
-        if (rect.width() < width) {
-            deltaX = width / 2.f - rect.right + rect.width() / 2.f;
+        if (rect.width() < mWidth) {
+            deltaX = mWidth / 2.f - rect.right + rect.width() / 2.f;
             Log.i(TAG, "\t偏移X: " + deltaX);
         }
-        if (rect.height() < height) {
-            deltaY = height / 2.f - rect.bottom + rect.height() / 2.f;
+        if (rect.height() < mHeight) {
+            deltaY = mHeight / 2.f - rect.bottom + rect.height() / 2.f;
             Log.i(TAG, "\t偏移Y " + deltaY);
         }
         mScaleMatrix.postTranslate(deltaX, deltaY);
-    }
-
-    @Override
-    public boolean onScaleBegin(ScaleGestureDetector detector) {
-        Log.d(TAG, "onScaleBegin: ");
-        return true;
-    }
-
-    @Override
-    public void onScaleEnd(ScaleGestureDetector detector) {
-        float scale = getScaleSize();
-        if (scale < mMinScaleSize) {
-            Log.w(TAG, "onScaleEnd: ");
-            //属性动画传递的是当前进度，其实应该再估值器中计算正确的值
-            ObjectAnimator.ofFloat(this, "scaleSize", 1.f)
-                    .setDuration(500)
-                    .start();
-        }
     }
 
     /**
@@ -212,17 +339,45 @@ public class ScaleImageView extends ImageView implements ScaleGestureDetector.On
     }
 
     public void setScaleSize(float percent) {
-        float scale = getScaleSize();
         //根据时间进度计算缩放大小
-        float finalScale = ((mMinScaleSize - scale) * percent + scale) / scale;
-        mScaleMatrix.postScale(finalScale, finalScale, getWidth() / 2, getHeight() / 2);
-        setImageMatrix(mScaleMatrix);
+        if (mAnimatorData != null) {
+            float scale = getScaleSize();
+            float finalScale = ((mAnimatorData.targetScaleSize - scale) * percent + scale) / scale;
+            scaleToTargetSize(finalScale, mAnimatorData.focusX, mAnimatorData.focusY);
+            Log.i(TAG, "setScaleSize:  scale:" + scale + " finalSize:" + finalScale +
+                    "\t percent:" + percent);
+        }
+
     }
+
+    private static class AnimatorData {
+
+        AnimatorData(float focusX, float focusY, float targetScaleSize) {
+            this.focusX = focusX;
+            this.focusY = focusY;
+            this.targetScaleSize = targetScaleSize;
+        }
+
+        float focusX;
+        float focusY;
+        float targetScaleSize;
+    }
+
 
     public float getScaleSize() {
         mScaleMatrix.getValues(mMatrixValues);
         return mMatrixValues[Matrix.MSCALE_X] < mMatrixValues[Matrix.MSCALE_Y] ?
                 mMatrixValues[Matrix.MSCALE_X] : mMatrixValues[Matrix.MSCALE_Y];
+    }
+
+
+    private boolean isBoundaryStart() {
+        return getImageRectF().left == 0;
+    }
+
+    private boolean isBoundaryEnd() {
+        RectF rect = getImageRectF();
+        return rect.right == mWidth;
     }
 
     private RectF getImageRectF() {
