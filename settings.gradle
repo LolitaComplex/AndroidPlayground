@@ -6,4 +6,4 @@ include ':RecyclerViewItemAnimator', ':Notification', ':ImageLoader', ':ThreadMo
         ':FragmentPagerAdapter',
         ':Toolbar',
         'ViewScroll',
-        'Canvas', ':ViewCollection'
+        'Canvas', ':ViewCollection', ':SurfaceView'

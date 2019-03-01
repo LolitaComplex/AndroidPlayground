@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/AliveService" />
             <option value="$PROJECT_DIR$/AndroidIPC" />
             <option value="$PROJECT_DIR$/AndroidWindow" />
+            <option value="$PROJECT_DIR$/Annotation" />
             <option value="$PROJECT_DIR$/Architecture" />
             <option value="$PROJECT_DIR$/Canvas" />
             <option value="$PROJECT_DIR$/FragmentPagerAdapter" />
@@ -20,9 +21,11 @@
             <option value="$PROJECT_DIR$/LibraryEncapsulation" />
             <option value="$PROJECT_DIR$/Loader" />
             <option value="$PROJECT_DIR$/MaterialDesignAnimation" />
+            <option value="$PROJECT_DIR$/NewFeature" />
             <option value="$PROJECT_DIR$/Notification" />
             <option value="$PROJECT_DIR$/RecyclerViewItemAnimator" />
             <option value="$PROJECT_DIR$/RuntimePermisstion" />
+            <option value="$PROJECT_DIR$/SurfaceView" />
             <option value="$PROJECT_DIR$/TestMoudle" />
             <option value="$PROJECT_DIR$/ThreadMode" />
             <option value="$PROJECT_DIR$/Toolbar" />

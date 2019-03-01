@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.netease.study.ui.surface">
+
+    <application
+        android:label="@string/app_name"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.finite.RenderColorsActivity" />
+        <activity android:name=".activity.finite.RenderSquaresActivity" />
+        <activity android:name=".activity.finite.RenderCirclesActivity" />
+        <activity android:name=".activity.finite.RenderAlphaActivity" />
+        <activity android:name=".activity.infinite.RenderPathActivity" />
+        <activity android:name=".activity.finite.RenderAlphaTextureActivity" />
+        <activity android:name=".activity.finite.RenderColorsTextureActivity" />
+        <activity android:name=".activity.finite.RenderSquaresTextureActivity" />
+        <activity android:name=".activity.finite.RenderCirclesTextureActivity" />
+        <activity android:name=".activity.infinite.RenderPathTextureActivity" />
+    </application>
+
+</manifest>

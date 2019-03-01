@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.netease.study.ui.surface.MainActivity" >
+
+    <Button
+        android:id="@+id/render_colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render colors"/>
+
+    <Button
+        android:id="@+id/render_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render alpha"/>
+
+    <Button
+        android:id="@+id/render_squares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render squares"/>
+
+    <Button
+        android:id="@+id/render_circles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render circles"/>
+
+    <Button
+        android:id="@+id/render_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render path"/>
+
+    <Button
+        android:id="@+id/render_texture_colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render texture colors"/>
+
+    <Button
+        android:id="@+id/render_texture_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render texture alpha"/>
+
+    <Button
+        android:id="@+id/render_texture_squares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render texture squares"/>
+
+    <Button
+        android:id="@+id/render_texture_circles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render texture circles"/>
+
+    <Button
+        android:id="@+id/render_texture_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="render texture path"/>
+
+</LinearLayout>
+

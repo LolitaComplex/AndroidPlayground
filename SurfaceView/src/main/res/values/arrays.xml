@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="colors">
+        <item>#22fff8</item>
+        <item>#cbadaf</item>
+        <item>#c5e719</item>
+    </string-array>
+</resources>

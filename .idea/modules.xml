@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidIPC/AndroidIPC.iml" filepath="$PROJECT_DIR$/AndroidIPC/AndroidIPC.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidPlayground.iml" filepath="$PROJECT_DIR$/AndroidPlayground.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" filepath="$PROJECT_DIR$/AndroidWindow/AndroidWindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Annotation/Annotation.iml" filepath="$PROJECT_DIR$/Annotation/Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Architecture/Architecture.iml" filepath="$PROJECT_DIR$/Architecture/Architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Canvas/Canvas.iml" filepath="$PROJECT_DIR$/Canvas/Canvas.iml" />
       <module fileurl="file://$PROJECT_DIR$/FragmentPagerAdapter/FragmentPagerAdapter.iml" filepath="$PROJECT_DIR$/FragmentPagerAdapter/FragmentPagerAdapter.iml" />
@@ -19,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" filepath="$PROJECT_DIR$/RecyclerViewItemAnimator/RecyclerViewItemAnimator.iml" />
       <module fileurl="file://$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" filepath="$PROJECT_DIR$/RuntimePermisstion/RuntimePermisstion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SurfaceView/SurfaceView.iml" filepath="$PROJECT_DIR$/SurfaceView/SurfaceView.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestMoudle/TestMoudle.iml" filepath="$PROJECT_DIR$/TestMoudle/TestMoudle.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadMode/ThreadMode.iml" filepath="$PROJECT_DIR$/ThreadMode/ThreadMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/Toolbar/Toolbar.iml" filepath="$PROJECT_DIR$/Toolbar/Toolbar.iml" />

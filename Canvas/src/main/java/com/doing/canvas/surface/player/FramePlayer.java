@@ -27,7 +27,7 @@ public abstract class FramePlayer {
     public enum State {
         PLAYING,
         STOPPED,
-        PAUSED;
+        PAUSED
     }
 
     public interface Callback{
